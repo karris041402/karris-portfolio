@@ -13,7 +13,7 @@ export const profile = {
   // EDIT: 1-3 letters for the logo monogram
   initials: 'HA',
   location: 'Manila, Philippines',
-  role: 'Developer & Digital Creator',
+  role: 'Full-Stack Developer · 4th-Year Student',
   // EDIT: shown in the browser tab (also update index.html for crawlers)
   siteTitle: 'Karris | Harris Angkua: Web & Software Developer in Manila',
   siteDescription:
@@ -73,13 +73,13 @@ export const hero = {
 /* ------------------------------ ABOUT ----------------------------------- */
 export const about = {
   eyebrow: 'About me',
-  title: 'A developer who speaks business',
+  title: 'Always learning, always building',
   // EDIT: your story, 2-3 short paragraphs
   paragraphs: [
-    "I'm Harris Angkua, a developer based in the Philippines who builds full-stack web apps, Flutter mobile apps and AI/machine learning systems. I've worked on face recognition attendance, speech-based reading assessment, payroll automation and gait classification models.",
-    'I pair clean UI/UX design with solid code in React, Laravel, Node.js and Python. I also edit videos and document workflows with clear flowcharts and diagrams. Expect plain-language communication, honest timelines and budget-friendly rates.',
+    "I'm a fourth-year student working toward becoming a full-stack developer, based in the Philippines. I embrace AI-assisted development and actively study system architecture and system design, using LLMs to move faster while keeping the quality of what I ship high.",
+    "I'm a technology enthusiast who loves to learn every day, and I'd love to learn with others. My passions are full-stack development, AI-assisted engineering and turning ideas into real-world applications, from face recognition systems to ML models.",
   ],
-  highlights: ['Web, mobile and AI under one roof', 'Clear, jargon-free communication', 'Budget-friendly rates'],
+  highlights: ['Full-stack: web, mobile and AI', 'AI-assisted, quality-first engineering', 'Always learning, open to collaborate'],
   // Shown as chips under the highlights. Set to [] to hide.
   perfectFor: [
     'Institutional management systems',
