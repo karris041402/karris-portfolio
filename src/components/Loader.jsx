@@ -28,7 +28,7 @@ export default function Loader({ onDone }) {
     let raf = 0;
     let timer = 0;
     const tick = (t) => {
-      const k = Math.min((t - t0) / duration, 1);
+      const k = Math.min(Math.max((t - t0) / duration, 0), 1);
       setP(Math.round((1 - (1 - k) ** 3) * 100));
       if (k < 1) raf = requestAnimationFrame(tick);
       else timer = window.setTimeout(() => doneRef.current(), reduced ? 0 : 400);

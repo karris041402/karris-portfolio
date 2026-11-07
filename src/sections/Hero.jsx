@@ -43,14 +43,14 @@ export default function Hero({ ready }) {
               {profile.role} · {profile.location}
             </motion.p>
 
-            <motion.h1 variants={item} id="hero-title" className="mt-3 font-display text-4xl font-black leading-tight text-white sm:text-5xl xl:text-6xl">
+            <motion.h1 variants={item} id="hero-title" className="mt-3 font-display text-[2rem] font-black leading-tight text-white min-[400px]:text-4xl sm:text-5xl xl:text-6xl">
               Hi, I&apos;m <GlitchText text={profile.name} className="text-gradient" play={ready} />
             </motion.h1>
 
             <motion.p
               variants={item}
               aria-label={profile.tagline}
-              className="mt-5 min-h-[3.5rem] font-display text-xl text-slate-200 sm:min-h-[2rem] sm:text-2xl"
+              className="mt-5 min-h-[5.25rem] font-display text-lg text-slate-200 sm:min-h-[4rem] sm:text-2xl lg:min-h-[4.5rem]"
             >
               {reduced || !ready ? (
                 <span aria-hidden={!reduced}>{reduced ? profile.tagline : ' '}</span>

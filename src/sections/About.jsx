@@ -15,7 +15,7 @@ export default function About() {
 
         {/* banner with parallax image */}
         <Reveal>
-          <div className="gradient-border relative aspect-[21/9] min-h-[10rem] overflow-hidden rounded-3xl">
+          <div className="gradient-border relative aspect-[16/9] overflow-hidden rounded-3xl sm:aspect-[21/9]">
             <Parallax speed={0.12} className="absolute -inset-y-[12%] inset-x-0">
               <SmoothImage src={profile.aboutBanner} alt="" width={1920} height={820} />
             </Parallax>
@@ -23,8 +23,8 @@ export default function About() {
           </div>
         </Reveal>
 
-        <div className="relative z-10 -mt-16 grid gap-10 px-2 sm:-mt-24 sm:px-6 lg:grid-cols-[320px_1fr] lg:gap-14">
-          <Reveal variant="left" className="mx-auto w-56 sm:w-64 lg:w-full">
+        <div className="relative z-10 -mt-14 grid gap-8 px-0 sm:-mt-24 sm:gap-10 sm:px-6 lg:grid-cols-[320px_1fr] lg:gap-14">
+          <Reveal variant="left" className="mx-auto w-40 sm:w-64 lg:w-full">
             <ProfileFrame />
           </Reveal>
 

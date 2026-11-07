@@ -29,7 +29,7 @@ export default function SettingsMenu() {
         aria-haspopup="true"
         aria-expanded={open}
         onClick={() => setOpen((o) => !o)}
-        className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-primary transition hover:border-primary/60 hover:shadow-glow-sm"
+        className="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-white/5 text-primary transition hover:border-primary/60 hover:shadow-glow-sm"
       >
         <Palette className="h-5 w-5" aria-hidden="true" />
       </button>
@@ -43,7 +43,7 @@ export default function SettingsMenu() {
             animate={{ opacity: 1, y: 0, scale: 1 }}
             exit={{ opacity: 0, y: -8, scale: 0.95 }}
             transition={{ type: 'spring', stiffness: 300, damping: 24 }}
-            className="glass gradient-border absolute right-0 top-14 z-50 w-64 rounded-2xl bg-ink-900/90 p-4 shadow-glow-sm"
+            className="glass gradient-border absolute right-0 top-14 z-50 w-[min(16rem,calc(100vw-2rem))] rounded-2xl bg-ink-900/90 p-4 shadow-glow-sm"
           >
             <p className="mb-3 font-mono text-[11px] uppercase tracking-widest text-slate-400">Accent color</p>
             <div role="radiogroup" aria-label="Accent color" className="flex gap-3">

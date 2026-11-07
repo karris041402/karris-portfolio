@@ -28,7 +28,7 @@ export default function Footer({ items }) {
                         href={s.href}
                         aria-label={s.label}
                         {...(s.href.startsWith('http') ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
-                        className="grid h-10 w-10 place-items-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition hover:border-primary/60 hover:text-primary hover:shadow-glow-sm"
+                        className="grid h-11 w-11 place-items-center rounded-full border border-white/10 bg-white/5 text-slate-300 transition hover:border-primary/60 hover:text-primary hover:shadow-glow-sm"
                       >
                         <Icon className="h-4 w-4" aria-hidden="true" />
                       </a>

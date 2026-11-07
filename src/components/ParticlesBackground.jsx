@@ -88,7 +88,8 @@ function Network({ count, pointColor, lineColor, mouse, scroll, reduced }) {
         <bufferGeometry ref={pointsGeo}>
           <bufferAttribute attach="attributes-position" count={count} array={positions} itemSize={3} />
         </bufferGeometry>
-        <pointsMaterial color={pointColor} size={0.07} sizeAttenuation transparent opacity={0.9} depthWrite={false} />
+        {/* fixed pixel size: points never balloon into big squares when close to the camera */}
+        <pointsMaterial color={pointColor} size={2.5} sizeAttenuation={false} transparent opacity={0.9} depthWrite={false} />
       </points>
       <lineSegments frustumCulled={false}>
         <bufferGeometry ref={linesGeo}>
@@ -160,7 +161,8 @@ export default function ParticlesBackground() {
             scroll={progress}
             reduced={reduced}
           />
-          <Shapes colors={[theme.c1, theme.c2, theme.c3]} reduced={reduced} />
+          {/* big wireframe shapes would sit behind text on phones: desktop only */}
+          {!isSmallScreen() && <Shapes colors={[theme.c1, theme.c2, theme.c3]} reduced={reduced} />}
         </Canvas>
       </ErrorBoundary>
     </div>

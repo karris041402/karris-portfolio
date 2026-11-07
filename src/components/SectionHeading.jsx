@@ -10,7 +10,7 @@ export default function SectionHeading({ id, eyebrow, title, subtitle, align = '
       <Reveal>
         <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">{`// ${eyebrow}`}</p>
       </Reveal>
-      <h2 id={id} className="mt-3 font-display text-3xl font-bold text-white sm:text-4xl md:text-5xl">
+      <h2 id={id} className="mt-3 break-words font-display text-[1.6rem] font-bold leading-tight text-white min-[400px]:text-3xl sm:text-4xl md:text-5xl">
         <GlitchText text={title} />
       </h2>
       <motion.span

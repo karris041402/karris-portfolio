@@ -262,7 +262,7 @@ export const pricing = {
   enabled: true,
   eyebrow: 'Pricing',
   title: 'Simple, honest pricing',
-  subtitle: 'Starting prices. Every project is quoted after a free discovery call.',
+  subtitle: 'Every project is quoted after a free discovery call.',
   // EDIT: replace with your own rates (or "Contact for quote")
   plans: [
     {

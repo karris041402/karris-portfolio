@@ -15,9 +15,12 @@
     scroll-padding-top: 5rem;
     -webkit-text-size-adjust: 100%;
   }
+  html {
+    overflow-x: clip;
+  }
   body {
     @apply bg-ink-950 font-sans text-slate-300 antialiased;
-    overflow-x: hidden;
+    overflow-x: clip;
   }
   ::selection {
     background: rgb(var(--c1) / 0.35);
