@@ -288,73 +288,109 @@ export const projectFilters: ProjectFilter[] = [
 ];
 
 // To add a project, copy one block, paste it, and edit the fields.
-// Image size: 1280x720 (16:9). Put the file in public/images/projects/.
+// Screenshots: drop images in src/assets/project/<folder>/ and set `folder` to that folder's name
+// (case-sensitive). Every image in the folder becomes the gallery, sorted by filename.
+// `cover` (optional) = filename to use as the card image; otherwise the first file is used.
 // link: a full URL, or "" (empty) to show a "Case study coming soon" badge.
 // category must match one of the filter values above: "Web App" | "Mobile App" | "AI/ML" | "Business"
 export const projects: Project[] = [
   {
-    id: "project-1",
-    title: "SAAMS: Attendance Management System",
-    description:
-      "Face-recognition attendance with geofencing and automated payroll.",
+    id: 'saams',
+    // EDIT: check the description, tech stack and link of every project below
+    title: 'SAAMS: Student Assistant Attendance Management System',
+    description: 'Attendance, scheduling and payroll for student assistants, with face recognition and geofencing.',
     longDescription:
-      "A dual-interface platform: a mobile-first UI for employees and a web-first UI for HR. Employees check in through the camera using face recognition, and geofencing verifies they are at the right location. HR gets real-time tracking and reporting, and monthly payroll is generated automatically. EDIT: add screenshots, results or a live link.",
-    category: "Web App",
-    tech: ["React", "Laravel", "Face Recognition", "Geofencing"],
-    image: "/images/projects/project-1.jpg",
-    link: "",
+      'A dual-interface platform: a mobile-first UI for student assistants and a web-first dashboard for HR. Assistants time in through the camera using face recognition, and geofencing confirms they are at the right place. HR manages assistants, designations, attendance logs, DTR validation and announcements, and monthly payroll is generated automatically for each cutoff.',
+    category: 'Web App',
+    tech: ['React', 'Laravel', 'Face Recognition', 'Geofencing'],
+    folder: 'saams',
+    cover: 'saams-2.jpg',
+    link: '',
     featured: true,
   },
   {
-    id: "project-2",
-    title: "Reading Assessment System",
-    description:
-      "Educational platform with speech recognition and text-to-speech.",
+    id: 'bras',
+    title: 'BRAS: Bangsamoro Reading Assessment Tools',
+    description: 'A platform that helps teachers assess students\' reading skills, digitally.',
     longDescription:
-      "Text-to-speech guides students as they read, while speech-to-text evaluates how they read aloud. The system detects and analyzes reading errors automatically, so teachers get clear results without manual checking. EDIT: add screenshots, results or a live link.",
-    category: "AI/ML",
-    tech: ["Speech-to-Text", "Text-to-Speech", "Python"],
-    image: "/images/projects/project-2.jpg",
-    link: "",
+      'Teachers upload reading passages, create questionnaires and get instant results and accurate reports, all in one platform. Text-to-speech guides students while speech-to-text evaluates how they read aloud, with automated error detection. Free for teachers, offline-capable, secure and private.',
+    category: 'AI/ML',
+    tech: ['Speech-to-Text', 'Text-to-Speech', 'Error Analysis', 'Offline-capable'],
+    folder: 'bras',
+    link: '',
     featured: true,
   },
   {
-    id: "project-3",
-    title: "Payslip Generation System",
-    description: "HR automation for payslip processing and distribution.",
+    id: 'gaitassist',
+    title: 'Gait Assist',
+    description: 'Mobile app and ML model for analyzing gait and managing patient records.',
     longDescription:
-      "Automates payslip processing, then generates and distributes the documents, replacing hours of repetitive HR work with a reliable, repeatable workflow. EDIT: add screenshots, results or a live link.",
-    category: "Business",
-    tech: ["Automation", "Document Generation"],
-    image: "/images/projects/project-3.jpg",
-    link: "",
+      'Built for licensed physical therapists: sign in to patient records, then analyze, assess and track gait over time. A machine learning model classifies gait types, backed by dataset sourcing and a full data pipeline in Python.',
+    category: 'AI/ML',
+    tech: ['Flutter', 'Python', 'Machine Learning'],
+    folder: 'gaitassist',
+    link: '',
+    featured: true,
+  },
+  {
+    id: 'inforsure',
+    title: 'InforSure: Health Claim Check',
+    description: 'Browser extension that checks health claims in English and Tagalog.',
+    longDescription:
+      'Highlight a health claim on any page, or upload an image, and InforSure gives a model verdict (for example "Reliable") with a confidence level, clearly labeled as an estimate and not a verification. Works in English and Tagalog, right beside the page you are reading.',
+    category: 'AI/ML',
+    tech: ['Browser Extension', 'Machine Learning', 'English + Tagalog'],
+    folder: 'Inforsure',
+    link: '',
     featured: false,
   },
   {
-    id: "project-4",
-    title: "Allergen Scanner",
-    description:
-      "Mobile-first health and safety app with real-time allergen detection.",
+    id: 'foodshield',
+    title: 'FoodShield: Smart Allergy & Safety Scanner',
+    description: 'Mobile app that scans food and flags allergens in real time.',
     longDescription:
-      "A mobile-first app that detects allergens in real time so users can make safer choices quickly. EDIT: add screenshots, results or a live link.",
-    category: "Mobile App",
-    tech: ["Mobile", "Real-time Detection"],
-    image: "/images/projects/project-4.jpg",
-    link: "",
+      'Users sign up with their details and allergy profile, then scan food to detect allergens in real time, so they can make safer choices quickly. Designed mobile-first with a clean, high-contrast interface.',
+    category: 'Mobile App',
+    tech: ['Flutter', 'Real-time Detection'],
+    folder: 'foodshield',
+    link: '',
     featured: false,
   },
   {
-    id: "project-5",
-    title: "Gait Classification ML Model",
-    description:
-      "Machine learning model that classifies gait types for medical research.",
+    id: 'aura',
+    title: 'AuRA: Early Autism Insights',
+    description: 'Helps parents learn about autism and their child\'s development.',
     longDescription:
-      "An ML model that classifies gait types for medical and research use. The work covered dataset sourcing, model development and the full data pipeline, implemented in Python. EDIT: add accuracy results, a paper or a live link.",
-    category: "AI/ML",
-    tech: ["Python", "Machine Learning", "Data Pipeline"],
-    image: "/images/projects/project-5.jpg",
-    link: "",
+      'A friendly web app for parents and guardians: learn about autism and child development, and complete assessments for each child, guided by a helpful AI assistant. Privacy-first, with clear terms and the ability to delete stored assessments from History.',
+    category: 'Web App',
+    tech: ['React', 'AI Assistant', 'Web'],
+    folder: 'AuRA',
+    link: '',
     featured: true,
+  },
+  {
+    id: 'payslip-generator',
+    title: 'HR Payslip Management System',
+    description: 'Imports Excel data and generates, prints and emails payslips automatically.',
+    longDescription:
+      'HR imports employee data from Excel, then generates regular and job-order payslips in one click, or creates manual ones. Payslips can be edited, downloaded, printed, kept in a searchable history and emailed straight to employees. Includes dark/light mode and an HR AI assistant that answers questions about the system.',
+    category: 'Business',
+    tech: ['Automation', 'Excel Import', 'Document Generation', 'Email'],
+    folder: 'payslip-generator',
+    link: '',
+    featured: false,
+  },
+  {
+    id: 'furtualcare',
+    title: 'FurtualCare: Animal Clinic Website',
+    description: 'Clinic website with services, an online pet shop and appointment booking.',
+    longDescription:
+      'A clean, trustworthy website for a veterinary clinic: services and grooming, a shop with a cart, an about page and a prominent "Book Appointment" flow, designed to turn visiting pet owners into booked clients.',
+    category: 'Business',
+    tech: ['Responsive Design', 'Online Shop', 'Booking'],
+    folder: 'FurtualCare',
+    link: '',
+    featured: false,
   },
 ];
 

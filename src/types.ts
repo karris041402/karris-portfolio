@@ -18,7 +18,10 @@ export interface Project {
   longDescription: string;
   category: ProjectCategory;
   tech: string[];
-  image: string;
+  /** Folder name inside src/assets/project/ (case-sensitive). Every image in it forms the gallery. */
+  folder: string;
+  /** Optional filename inside `folder` to use as the card cover. Defaults to the first file. */
+  cover?: string;
   /** Full URL, or "" to show the "Case study coming soon" badge. */
   link: string;
   featured: boolean;

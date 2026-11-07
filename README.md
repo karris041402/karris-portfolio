@@ -29,7 +29,7 @@ src/lib/           icons map, gsap setup, helpers
 **Add a project** — in `content.ts`, copy one block in `projects`, paste, edit fields. `link: ""` shows "Case study coming soon". Category must be `"Web App"`, `"Mobile App"`, `"AI/ML"` or `"Business"` (the type checker will flag typos).
 
 **Replace images** — overwrite the files in `public/images/` (same names) or change the path strings in `content.ts`.
-Sizes: profile 800x1000, about banner 1920x820, project previews 1280x720, og-image 1200x630.
+Sizes: profile 800x1000, about banner 1920x820, og-image 1200x630. Project screenshots: put them in `src/assets/project/<folder>/` and set `folder` in the project block (every image in it becomes the gallery).
 Missing/broken images fall back to `placeholder.svg` automatically.
 
 **Replace the logo** — default is the animated SVG `<Logo />` built from `profile.initials` + `profile.brand`.

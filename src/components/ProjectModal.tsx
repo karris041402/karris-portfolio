@@ -1,8 +1,11 @@
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import { motion } from 'framer-motion';
-import { ExternalLink, X } from 'lucide-react';
+import { AnimatePresence, motion, type PanInfo } from 'framer-motion';
+import { useReducedMotion } from '../hooks/useReducedMotion';
+import { ChevronLeft, ChevronRight, ExternalLink, X } from 'lucide-react';
 import type { Project } from '../types';
+import { getProjectImages } from '../lib/projectImages';
+import { profile } from '../data/content';
 import SmoothImage from './SmoothImage';
 
 /*
@@ -13,6 +16,28 @@ export default function ProjectModal({ project, onClose }: { project: Project; o
   const dialogRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
   const closeFn = useRef(onClose);
+  const images = useMemo(() => getProjectImages(project.folder, project.cover), [project.folder, project.cover]);
+  const reduced = useReducedMotion();
+  // [current index, direction of the last move] - direction drives the slide animation
+  const [[index, direction], setPage] = useState<[number, number]>([0, 0]);
+  const thumbs = useRef<HTMLUListElement>(null);
+  const count = Math.max(images.length, 1);
+  const step = useCallback((dir: number) => setPage(([i]) => [(i + dir + count) % count, dir]), [count]);
+  const goTo = (n: number) => setPage(([i]) => [n, n >= i ? 1 : -1]);
+
+  // swipe: far enough or fast enough flips the slide, otherwise it springs back
+  const onDragEnd = (_: unknown, { offset, velocity }: PanInfo) => {
+    if (count < 2) return;
+    if (offset.x < -70 || velocity.x < -450) step(1);
+    else if (offset.x > 70 || velocity.x > 450) step(-1);
+  };
+
+  // keep the active thumbnail in view
+  useEffect(() => {
+    thumbs.current?.children[index]?.scrollIntoView({ inline: 'center', block: 'nearest', behavior: reduced ? 'auto' : 'smooth' });
+  }, [index, reduced]);
+  const stepRef = useRef(step);
+  stepRef.current = step;
   closeFn.current = onClose;
 
   useEffect(() => {
@@ -23,6 +48,8 @@ export default function ProjectModal({ project, onClose }: { project: Project; o
 
     const onKey = (e: KeyboardEvent) => {
       if (e.key === 'Escape') closeFn.current();
+      if (e.key === 'ArrowLeft') stepRef.current(-1);
+      if (e.key === 'ArrowRight') stepRef.current(1);
       if (e.key !== 'Tab') return;
       const dialog = dialogRef.current;
       if (!dialog) return;
@@ -46,7 +73,7 @@ export default function ProjectModal({ project, onClose }: { project: Project; o
     };
   }, []);
 
-  const { title, longDescription, category, tech, image, link, featured } = project;
+  const { title, longDescription, category, tech, link, featured } = project;
 
   return createPortal(
     <motion.div
@@ -77,9 +104,81 @@ export default function ProjectModal({ project, onClose }: { project: Project; o
           <X className="h-5 w-5" aria-hidden="true" />
         </button>
 
-        <div className="aspect-video">
-          <SmoothImage src={image} alt={`${title} preview`} width={1280} height={720} eager />
+        <div className="relative aspect-video touch-pan-y select-none overflow-hidden bg-ink-950">
+          <AnimatePresence initial={false} custom={direction}>
+            <motion.div
+              key={images[index] ?? 'fallback'}
+              custom={direction}
+              variants={{
+                enter: (d: number) => ({ x: reduced ? 0 : d >= 0 ? '100%' : '-100%', opacity: 0 }),
+                center: { x: 0, opacity: 1 },
+                exit: (d: number) => ({ x: reduced ? 0 : d >= 0 ? '-100%' : '100%', opacity: 0 }),
+              }}
+              initial="enter"
+              animate="center"
+              exit="exit"
+              transition={{ type: 'spring', stiffness: 300, damping: 34 }}
+              drag={count > 1 ? 'x' : false}
+              dragConstraints={{ left: 0, right: 0 }}
+              dragElastic={0.45}
+              onDragEnd={onDragEnd}
+              className={`absolute inset-0 ${count > 1 ? 'cursor-grab active:cursor-grabbing' : ''}`}
+            >
+              <SmoothImage
+                src={images[index] ?? profile.fallbackImage}
+                alt={`${title} screenshot ${index + 1} of ${count}`}
+                eager
+                adaptive
+              />
+            </motion.div>
+          </AnimatePresence>
+          {count > 1 && (
+            <>
+              <button
+                type="button"
+                onClick={() => step(-1)}
+                aria-label="Previous screenshot"
+                className="absolute left-3 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-ink-950/70 text-white backdrop-blur transition hover:border-primary hover:text-primary sm:grid"
+              >
+                <ChevronLeft className="h-5 w-5" aria-hidden="true" />
+              </button>
+              <button
+                type="button"
+                onClick={() => step(1)}
+                aria-label="Next screenshot"
+                className="absolute right-3 top-1/2 z-10 hidden h-10 w-10 -translate-y-1/2 place-items-center rounded-full border border-white/15 bg-ink-950/70 text-white backdrop-blur transition hover:border-primary hover:text-primary sm:grid"
+              >
+                <ChevronRight className="h-5 w-5" aria-hidden="true" />
+              </button>
+              <span
+                className="pointer-events-none absolute bottom-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-ink-950/70 px-3 py-1 font-mono text-xs text-white backdrop-blur"
+                aria-hidden="true"
+              >
+                {index + 1} / {count}
+              </span>
+              <p className="sr-only">Swipe, drag, or use the left and right arrow keys to change the screenshot.</p>
+            </>
+          )}
         </div>
+        {count > 1 && (
+          <ul ref={thumbs} className="flex gap-2 overflow-x-auto bg-ink-950/60 p-3" aria-label="Screenshots">
+            {images.map((url, i) => (
+              <li key={url} className="shrink-0">
+                <button
+                  type="button"
+                  onClick={() => goTo(i)}
+                  aria-label={`Show screenshot ${i + 1} of ${count}`}
+                  aria-current={i === index}
+                  className={`block h-14 w-24 overflow-hidden rounded-md border transition ${
+                    i === index ? 'border-primary shadow-glow-sm' : 'border-white/10 opacity-60 hover:opacity-100'
+                  }`}
+                >
+                  <SmoothImage src={url} alt="" adaptive />
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
 
         <div className="p-6 sm:p-8">
           <div className="flex flex-wrap items-center gap-2">

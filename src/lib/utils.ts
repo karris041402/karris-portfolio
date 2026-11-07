@@ -16,5 +16,9 @@ export const isSmallScreen = (): boolean => window.matchMedia('(max-width: 768px
 export const hasFinePointer = (): boolean => window.matchMedia('(pointer: fine)').matches;
 
 /** Resolves "/images/x.jpg" against Vite's base path so GitHub Pages sub-paths work. */
-export const asset = (src: string): string =>
-  src && src.startsWith('/') ? import.meta.env.BASE_URL + src.slice(1) : src;
+export const asset = (src: string): string => {
+  const base = import.meta.env.BASE_URL;
+  // URLs produced by Vite imports already include the base path; plain "/images/x" paths don't.
+  if (!src || !src.startsWith('/') || src.startsWith(base)) return src;
+  return base + src.slice(1);
+};

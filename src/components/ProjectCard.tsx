@@ -1,8 +1,10 @@
-import { forwardRef } from 'react';
+import { forwardRef, useMemo, useState, type PointerEvent } from 'react';
 import { motion } from 'framer-motion';
 import { ExternalLink, Star } from 'lucide-react';
 import type { Project } from '../types';
-import SmoothImage from './SmoothImage';
+import { getProjectImages } from '../lib/projectImages';
+import { profile } from '../data/content';
+import ImageCycler from './ImageCycler';
 import TiltCard from './TiltCard';
 
 /*
@@ -14,7 +16,14 @@ const ProjectCard = forwardRef<HTMLElement, { project: Project; onOpen: (project
   { project, onOpen },
   ref,
 ) {
-  const { title, description, category, tech, image, link, featured } = project;
+  const { title, description, category, tech, folder, cover, link, featured } = project;
+  const images = useMemo(() => {
+    const found = getProjectImages(folder, cover);
+    return found.length ? found : [profile.fallbackImage];
+  }, [folder, cover]);
+  // hover (mouse only) or keyboard focus starts the preview slideshow
+  const [playing, setPlaying] = useState(false);
+  const onEnter = (e: PointerEvent) => e.pointerType === 'mouse' && setPlaying(true);
 
   return (
     <motion.article
@@ -27,18 +36,16 @@ const ProjectCard = forwardRef<HTMLElement, { project: Project; onOpen: (project
       onClick={(e) => {
         if (!(e.target as HTMLElement).closest('a')) onOpen(project);
       }}
+      onPointerEnter={onEnter}
+      onPointerLeave={() => setPlaying(false)}
+      onFocus={() => setPlaying(true)}
+      onBlur={() => setPlaying(false)}
       className="cursor-pointer"
     >
       <TiltCard max={6} className="flex flex-col">
         <div className="relative aspect-video overflow-hidden">
-          <SmoothImage
-            src={image}
-            alt={`${title} preview`}
-            width={1280}
-            height={720}
-            imgClassName="transition-transform duration-700 group-hover:scale-110"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-ink-950/90 via-ink-950/10 to-transparent" />
+          <ImageCycler images={images} alt={`${title} preview`} playing={playing} />
+          <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-ink-950/80 via-transparent to-transparent" />
           <span className="absolute left-3 top-3 rounded-full border border-white/15 bg-ink-950/70 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-primary backdrop-blur">
             {category}
           </span>
@@ -49,11 +56,9 @@ const ProjectCard = forwardRef<HTMLElement, { project: Project; onOpen: (project
           )}
           <span
             aria-hidden="true"
-            className="absolute inset-0 grid place-items-center bg-primary/10 opacity-0 backdrop-blur-[2px] transition-opacity duration-300 group-hover:opacity-100"
+            className="pointer-events-none absolute bottom-3 right-3 rounded-full border border-primary/60 bg-ink-950/70 px-3 py-1 text-xs font-semibold text-white opacity-0 shadow-glow-sm backdrop-blur transition-opacity duration-300 group-hover:opacity-100"
           >
-            <span className="rounded-full border border-primary/60 bg-ink-950/70 px-4 py-2 text-sm font-semibold text-white shadow-glow-sm">
-              View details
-            </span>
+            View details
           </span>
         </div>
 
