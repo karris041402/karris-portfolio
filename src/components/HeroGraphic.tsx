@@ -34,7 +34,7 @@ export default function HeroGraphic({ ready }: { ready: boolean }) {
 
       <ErrorBoundary fallback={<StaticFallback />}>
         <Suspense fallback={null}>
-          <div className="absolute inset-0" aria-hidden="true">
+          <div className="pointer-events-none absolute -inset-[20%]" aria-hidden="true">
             <HeroScene colors={[theme.c1, theme.c2, theme.c3]} mouse={mouse} reduced={reduced} active={active} />
           </div>
         </Suspense>

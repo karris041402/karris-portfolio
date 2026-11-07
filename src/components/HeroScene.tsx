@@ -148,7 +148,7 @@ export default function HeroScene({ colors, mouse, reduced, active }: { colors: 
   return (
     <Canvas
       dpr={[1, 1.75]}
-      camera={{ position: [0, 0, 7.2], fov: 45 }}
+      camera={{ position: [0, 0, 10.1], fov: 45 }}
       frameloop={active ? (reduced ? 'demand' : 'always') : 'never'}
       gl={{ alpha: true, antialias: true, powerPreference: 'high-performance' }}
     >
