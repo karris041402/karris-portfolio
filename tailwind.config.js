@@ -3,7 +3,7 @@
 // switcher in SettingsContext), so every `primary` / `secondary` / `tertiary`
 // utility, glow and gradient re-colors instantly.
 export default {
-  content: ['./index.html', './src/**/*.{js,jsx}'],
+  content: ['./index.html', './src/**/*.{js,jsx,ts,tsx}'],
   theme: {
     extend: {
       colors: {
