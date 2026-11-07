@@ -9,10 +9,20 @@ export default function Services() {
       <CircuitLines />
       <div className="container-x relative">
         <SectionHeading id="services-title" eyebrow={services.eyebrow} title={services.title} subtitle={services.subtitle} />
-        <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-          {services.items.map((service, i) => (
-            <ServiceCard key={service.id} service={service} index={i} />
-          ))}
+        {/* 6-column grid so a lone last card is centered on desktop instead of left-aligned */}
+        <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-6">
+          {services.items.map((service, i) => {
+            const n = services.items.length;
+            const lone = i === n - 1 && n % 3 === 1;
+            return (
+              <ServiceCard
+                key={service.id}
+                service={service}
+                index={i}
+                className={`lg:col-span-2 ${lone ? 'md:col-span-2 lg:col-start-3' : ''}`}
+              />
+            );
+          })}
         </ul>
       </div>
     </section>

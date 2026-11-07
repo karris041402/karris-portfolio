@@ -4,10 +4,10 @@ import Reveal from './Reveal';
 import TiltCard from './TiltCard';
 
 /* Service card: tilt + glow, with a "What you get" checklist. */
-export default function ServiceCard({ service, index }) {
+export default function ServiceCard({ service, index, className = '' }) {
   const Icon = getIcon(service.icon);
   return (
-    <Reveal variant="assemble" delay={index * 0.08} as="li" className="h-full list-none">
+    <Reveal variant="assemble" delay={(index % 3) * 0.08} as="li" className={`h-full list-none ${className}`}>
       <TiltCard className="flex flex-col p-6 sm:p-7">
         <div className="mb-5 flex items-start justify-between">
           <span className="grid h-14 w-14 place-items-center rounded-xl border border-primary/30 bg-primary/10 text-primary shadow-glow-sm transition-transform duration-300 group-hover:scale-110">

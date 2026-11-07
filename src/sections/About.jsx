@@ -42,6 +42,18 @@ export default function About() {
                   </li>
                 ))}
               </ul>
+              {about.perfectFor?.length > 0 && (
+                <div className="mt-8">
+                  <p className="mb-3 font-mono text-[11px] uppercase tracking-widest text-primary">Perfect for</p>
+                  <ul className="flex flex-wrap gap-2">
+                    {about.perfectFor.map((p) => (
+                      <li key={p} className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-xs text-slate-300">
+                        {p}
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              )}
             </Reveal>
 
             <dl className="mt-10 grid grid-cols-2 gap-4 sm:grid-cols-4">

@@ -17,12 +17,12 @@ export const profile = {
   // EDIT: shown in the browser tab (also update index.html for crawlers)
   siteTitle: 'Karris | Harris Angkua: Web & Software Developer in Manila',
   siteDescription:
-    'Harris Angkua (Karris) builds websites, software, automation and UI/UX for businesses in Manila, Philippines.',
+    'Harris Angkua (Karris) builds web, mobile and AI-powered systems, plus automation and UI/UX, for businesses and students in the Philippines.',
   // EDIT: main tagline (typed first in the hero, reused in the footer)
-  tagline: 'I build smart websites and software that grow your business',
+  tagline: 'I build web, mobile and AI-powered software that grows your business',
   // EDIT: one or two sentences under the headline
   valueStatement:
-    'Websites, apps and automations designed to look sharp, run fast and save you time. From first sketch to launch day, you work with one person who cares about your results.',
+    'Full-stack web apps, Flutter mobile apps and machine learning systems that look sharp, run fast and save you time. From first sketch to launch day, you work with one person who cares about your results.',
   // EDIT: availability pill in the hero. Set to "" to hide it.
   availability: 'Open for new clients',
 
@@ -55,7 +55,8 @@ export const nav = [
 export const hero = {
   // The first phrase should be your main tagline. Others rotate after it.
   typingPhrases: [
-    'I build smart websites and software that grow your business',
+    'I build web, mobile and AI-powered software that grows your business',
+    'I teach machines to recognize faces, speech and patterns',
     'I automate the boring work so you can focus',
     'I design interfaces people love to use',
   ],
@@ -63,9 +64,9 @@ export const hero = {
   secondaryCta: { label: 'Hire Me', href: '#contact' },
   // Floating "UI fragments" around the 3D graphic. `icon` must exist in src/lib/icons.js.
   chips: [
-    { label: 'Lighthouse 98', icon: 'Gauge', position: 'top-[8%] left-[-2%]' },
-    { label: 'Mobile ready', icon: 'MonitorSmartphone', position: 'top-[22%] right-[-4%]' },
-    { label: 'SEO optimized', icon: 'Search', position: 'bottom-[26%] left-[-6%]' },
+    { label: 'AI / ML ready', icon: 'Brain', position: 'top-[8%] left-[-2%]' },
+    { label: 'Web + Mobile', icon: 'MonitorSmartphone', position: 'top-[22%] right-[-4%]' },
+    { label: 'Real-time automation', icon: 'Zap', position: 'bottom-[26%] left-[-6%]' },
   ],
 };
 
@@ -75,15 +76,24 @@ export const about = {
   title: 'A developer who speaks business',
   // EDIT: your story, 2-3 short paragraphs
   paragraphs: [
-    "I'm Harris Angkua, a developer based in Manila, Philippines, building websites, apps and automation tools for businesses and individuals. I pair clean UI/UX design with solid code in React, Node.js, Python and PHP.",
-    'I also edit videos and document workflows with clear flowcharts and diagrams, so every part of your project is easy to understand. Expect plain-language communication, honest timelines and support after launch.',
+    "I'm Harris Angkua, a developer based in the Philippines who builds full-stack web apps, Flutter mobile apps and AI/machine learning systems. I've worked on face recognition attendance, speech-based reading assessment, payroll automation and gait classification models.",
+    'I pair clean UI/UX design with solid code in React, Laravel, Node.js and Python. I also edit videos and document workflows with clear flowcharts and diagrams. Expect plain-language communication, honest timelines and budget-friendly rates.',
   ],
-  highlights: ['Clear, jargon-free communication', 'Design + code from one person', 'Support after launch'],
+  highlights: ['Web, mobile and AI under one roof', 'Clear, jargon-free communication', 'Budget-friendly rates'],
+  // Shown as chips under the highlights. Set to [] to hide.
+  perfectFor: [
+    'Institutional management systems',
+    'AI/ML-powered apps',
+    'Multi-role platforms (student / admin / staff)',
+    'Automated workflows & scheduling',
+    'Capstone, thesis & portfolio projects',
+    'Educational technology',
+  ],
   // EDIT: numbers shown as animated counters
   stats: [
-    { value: 30, suffix: '+', label: 'Websites launched' },
-    { value: 25, suffix: '+', label: 'Happy clients' },
-    { value: 4, suffix: '+', label: 'Years experience' },
+    { value: 5, suffix: '+', label: 'Featured projects' },
+    { value: 7, suffix: '', label: 'Services offered' },
+    { value: 15, suffix: '+', label: 'Technologies' },
     { value: 100, suffix: '%', label: 'Client focused' },
   ],
 };
@@ -94,13 +104,41 @@ export const services = {
   eyebrow: 'Services',
   title: 'Everything your business needs online',
   subtitle: 'Pick one service or combine them. Every project is built around your goals.',
-  items: [
+items: [
     {
       id: 'software-web',
       icon: 'Code2',
       title: 'Software & Web Development',
-      description: 'Websites, web apps and desktop or mobile software built to fit how your business works.',
-      includes: ['Custom website or app', 'Mobile-friendly, fast and secure', 'Database and admin tools', 'Deployment and handover'],
+      description: 'Full-stack web applications, from the frontend to the database, built around how your organization works.',
+      includes: ['Full-stack web apps (frontend to database)', 'Multi-role and multi-interface platforms', 'Institutional & administrative systems', 'RESTful APIs and systems integration'],
+    },
+    {
+      id: 'mobile',
+      icon: 'MonitorSmartphone',
+      title: 'Mobile App Development',
+      description: 'Cross-platform mobile apps with Flutter and Dart, designed mobile-first.',
+      includes: ['Flutter & Dart apps', 'Responsive, adaptive UI', 'Camera, location and device features', 'Connected to your backend'],
+    },
+    {
+      id: 'ai-ml',
+      icon: 'Brain',
+      title: 'AI & Machine Learning',
+      description: 'Smart features and custom models that recognize faces, speech and patterns.',
+      includes: ['Face recognition & biometric systems', 'Speech recognition & text-to-speech', 'Custom ML models in Python', 'Dataset sourcing and pipeline development'],
+    },
+    {
+      id: 'automation',
+      icon: 'Zap',
+      title: 'Automation & Real-time Processing',
+      description: 'Systems that take over repetitive work and process data as it happens.',
+      includes: ['Real-time data processing', 'Automated scheduling & report generation', 'Geofencing & location-based services', 'Compliance automation and cron jobs'],
+    },
+    {
+      id: 'ui-ux',
+      icon: 'PenTool',
+      title: 'UI/UX Design',
+      description: 'Interfaces that look great and are easy to use, from wireframe to polished prototype.',
+      includes: ['Wireframes and user flows', 'Modern visual design in Figma', 'Clickable prototype', 'Design handoff for developers'],
     },
     {
       id: 'video-editing',
@@ -110,25 +148,11 @@ export const services = {
       includes: ['Cuts, transitions and pacing', 'Color, audio and captions', 'Social-ready formats', 'Revisions until you are happy'],
     },
     {
-      id: 'automation',
-      icon: 'Zap',
-      title: 'Automation',
-      description: 'Scripts and workflows that take over repetitive tasks and save hours every week.',
-      includes: ['Process review', 'Custom scripts and integrations', 'Reports and data handling', 'Documentation and training'],
-    },
-    {
       id: 'documentation',
       icon: 'Workflow',
       title: 'Document Management & Diagrams',
       description: 'Clear flowcharts, diagrams and organized documents so your processes are easy to follow.',
       includes: ['Flowcharts and system diagrams', 'Process and workflow documentation', 'Organized file structure', 'Editable source files'],
-    },
-    {
-      id: 'ui-ux',
-      icon: 'PenTool',
-      title: 'UI/UX Design',
-      description: 'Interfaces that look great and are easy to use, from wireframe to polished prototype.',
-      includes: ['Wireframes and user flows', 'Modern visual design in Figma', 'Clickable prototype', 'Design handoff for developers'],
     },
   ],
 };
@@ -140,44 +164,46 @@ export const skills = {
   title: 'The stack behind your site',
   subtitle: 'Modern, proven tools chosen for speed, reliability and easy maintenance.',
   // EDIT: replace with your real stack
-  groups: [
+groups: [
     {
       id: 'frontend',
       icon: 'Code2',
-      title: 'Frontend',
+      title: 'Frontend & Design',
       // EDIT: levels are rough estimates, adjust to your real confidence
       items: [
-        { name: 'React.js', level: 88 },
-        { name: 'Tailwind CSS', level: 90 },
-        { name: 'Vite', level: 85 },
+        { name: 'React + Tailwind CSS', level: 90 },
+        { name: 'HTML5, CSS3, TypeScript', level: 85 },
+        { name: 'Flutter & Dart (mobile)', level: 75 },
+        { name: 'Responsive & adaptive UI/UX', level: 88 },
         { name: 'Figma', level: 82 },
         { name: 'Canva', level: 85 },
-        { name: 'Electron', level: 70 },
-        { name: 'Flutter', level: 65 },
+        { name: 'Vite / Electron', level: 72 },
       ],
     },
     {
       id: 'backend',
       icon: 'Server',
-      title: 'Backend',
+      title: 'Backend & Databases',
       items: [
+        { name: 'Laravel (PHP)', level: 82 },
         { name: 'Node.js', level: 82 },
-        { name: 'Python', level: 80 },
-        { name: 'PHP', level: 78 },
-        { name: 'PostgreSQL', level: 72 },
-        { name: 'MySQL', level: 80 },
-        { name: 'SQLite', level: 75 },
+        { name: 'RESTful API design', level: 88 },
+        { name: 'MySQL', level: 85 },
+        { name: 'PostgreSQL', level: 75 },
+        { name: 'SQLite', level: 78 },
       ],
     },
     {
-      id: 'tools',
-      icon: 'Wrench',
-      title: 'Tools',
+      id: 'ai-tools',
+      icon: 'Brain',
+      title: 'AI & Tools',
       items: [
-        { name: 'Git', level: 85 },
-        { name: 'GitHub', level: 88 },
-        { name: 'npm', level: 88 },
-        { name: 'PowerShell', level: 75 },
+        { name: 'Python (ML, automation, data)', level: 85 },
+        { name: 'Face recognition & biometrics', level: 78 },
+        { name: 'Speech recognition (STT/TTS)', level: 75 },
+        { name: 'Geofencing & location tracking', level: 78 },
+        { name: 'Cron jobs & task automation', level: 82 },
+        { name: 'Git, GitHub, npm, PowerShell', level: 88 },
       ],
     },
   ],
@@ -194,6 +220,7 @@ export const projectsSection = {
 export const projectFilters = [
   { label: 'All', value: 'All' },
   { label: 'Web Apps', value: 'Web App' },
+  { label: 'Mobile', value: 'Mobile App' },
   { label: 'AI/ML', value: 'AI/ML' },
   { label: 'Business', value: 'Business' },
 ];
@@ -201,42 +228,65 @@ export const projectFilters = [
 // To add a project, copy one block, paste it, and edit the fields.
 // Image size: 1280x720 (16:9). Put the file in public/images/projects/.
 // link: a full URL, or "" (empty) to show a "Case study coming soon" badge.
-// category must be one of: "Web App" | "AI/ML" | "Business"
+// category must match one of the filter values above: "Web App" | "Mobile App" | "AI/ML" | "Business"
 export const projects = [
   {
     id: 'project-1',
-    // EDIT: project name
-    title: 'BrewBox Online Ordering',
-    description: 'Online menu and pre-order system for a local coffee shop.',
+    title: 'SAAMS: Attendance Management System',
+    description: 'Face-recognition attendance with geofencing and automated payroll.',
     longDescription:
-      'A fast ordering site where customers browse the menu, customize drinks and schedule pickup. Staff get a simple dashboard for incoming orders. Result: shorter queues and more repeat customers. EDIT: replace with your real case study.',
+      'A dual-interface platform: a mobile-first UI for employees and a web-first UI for HR. Employees check in through the camera using face recognition, and geofencing verifies they are at the right location. HR gets real-time tracking and reporting, and monthly payroll is generated automatically. EDIT: add screenshots, results or a live link.',
     category: 'Web App',
-    tech: ['React', 'Tailwind', 'Node.js'],
+    tech: ['React', 'Laravel', 'Face Recognition', 'Geofencing'],
     image: '/images/projects/project-1.jpg',
-    link: 'https://example.com',
+    link: '',
     featured: true,
   },
   {
     id: 'project-2',
-    title: 'SmartReply Assistant',
-    description: 'An AI assistant that answers common customer questions 24/7.',
+    title: 'Reading Assessment System',
+    description: 'Educational platform with speech recognition and text-to-speech.',
     longDescription:
-      'A chatbot trained on a clinic\'s FAQs and services. It answers questions, collects booking requests and hands tricky cases to a human. EDIT: replace with your real case study.',
+      'Text-to-speech guides students as they read, while speech-to-text evaluates how they read aloud. The system detects and analyzes reading errors automatically, so teachers get clear results without manual checking. EDIT: add screenshots, results or a live link.',
     category: 'AI/ML',
-    tech: ['Python', 'OpenAI API', 'React'],
+    tech: ['Speech-to-Text', 'Text-to-Speech', 'Python'],
     image: '/images/projects/project-2.jpg',
+    link: '',
+    featured: true,
+  },
+  {
+    id: 'project-3',
+    title: 'Payslip Generation System',
+    description: 'HR automation for payslip processing and distribution.',
+    longDescription:
+      'Automates payslip processing, then generates and distributes the documents, replacing hours of repetitive HR work with a reliable, repeatable workflow. EDIT: add screenshots, results or a live link.',
+    category: 'Business',
+    tech: ['Automation', 'Document Generation'],
+    image: '/images/projects/project-3.jpg',
     link: '',
     featured: false,
   },
   {
-    id: 'project-3',
-    title: 'Bright Dental Clinic Website',
-    description: 'A clean, trustworthy website that fills the appointment calendar.',
+    id: 'project-4',
+    title: 'Allergen Scanner',
+    description: 'Mobile-first health and safety app with real-time allergen detection.',
     longDescription:
-      'A complete redesign for a family dental clinic: clear services, team profiles, reviews and online appointment requests. Page speed and local SEO were improved so more nearby patients find the clinic. EDIT: replace with your real case study.',
-    category: 'Business',
-    tech: ['React', 'Tailwind', 'SEO'],
-    image: '/images/projects/project-3.jpg',
+      'A mobile-first app that detects allergens in real time so users can make safer choices quickly. EDIT: add screenshots, results or a live link.',
+    category: 'Mobile App',
+    tech: ['Mobile', 'Real-time Detection'],
+    image: '/images/projects/project-4.jpg',
+    link: '',
+    featured: false,
+  },
+  {
+    id: 'project-5',
+    title: 'Gait Classification ML Model',
+    description: 'Machine learning model that classifies gait types for medical research.',
+    longDescription:
+      'An ML model that classifies gait types for medical and research use. The work covered dataset sourcing, model development and the full data pipeline, implemented in Python. EDIT: add accuracy results, a paper or a live link.',
+    category: 'AI/ML',
+    tech: ['Python', 'Machine Learning', 'Data Pipeline'],
+    image: '/images/projects/project-5.jpg',
     link: '',
     featured: true,
   },
@@ -262,7 +312,7 @@ export const pricing = {
   enabled: true,
   eyebrow: 'Pricing',
   title: 'Simple, honest pricing',
-  subtitle: 'Every project is quoted after a free discovery call.',
+  subtitle: 'Budget-friendly rates. Every project is quoted after a free chat about your needs.',
   // EDIT: replace with your own rates (or "Contact for quote")
   plans: [
     {
@@ -290,8 +340,8 @@ export const pricing = {
       name: 'Custom',
       price: 'Contact for quote',
       period: '',
-      description: 'Web apps, booking systems and custom features for unique needs.',
-      features: ['Custom web app or system', 'Database and admin panel', 'Third-party integrations', 'Priority support'],
+      description: 'Web or mobile systems, AI/ML features and automation built for your exact needs.',
+      features: ['Full-stack web app or Flutter mobile app', 'AI / machine learning integration', 'Database, admin panel and automation', 'Capstone, thesis and portfolio projects', 'Priority support'],
       popular: false,
       cta: "Let's Talk",
     },
@@ -302,7 +352,7 @@ export const pricing = {
 export const contact = {
   eyebrow: 'Contact',
   title: "Let's build something great",
-  subtitle: 'Tell me about your project. I reply within 24 hours.',
+  subtitle: 'Message me to discuss your project. I reply within 24 hours.',
   // ★ EDIT: PASTE YOUR FORMSPREE ENDPOINT HERE ★
   // 1. Create a free form at https://formspree.io  2. Copy its URL, e.g.
   //    "https://formspree.io/f/abcdwxyz"  3. Paste it between the quotes below.
