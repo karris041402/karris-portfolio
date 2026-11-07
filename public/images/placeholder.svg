@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 720" width="1280" height="720">
+  <!-- Fallback shown automatically when any image path in content.js fails to load. -->
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0d1024"/>
+      <stop offset="1" stop-color="#1b1140"/>
+    </linearGradient>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#22d3ee"/>
+      <stop offset="1" stop-color="#8b5cf6"/>
+    </linearGradient>
+  </defs>
+  <rect width="1280" height="720" fill="url(#bg)"/>
+  <g stroke="#22d3ee" stroke-opacity=".08">
+    <path d="M0 120H1280M0 240H1280M0 360H1280M0 480H1280M0 600H1280M160 0V720M320 0V720M480 0V720M640 0V720M800 0V720M960 0V720M1120 0V720"/>
+  </g>
+  <rect x="320" y="190" width="640" height="340" rx="18" fill="#ffffff" fill-opacity=".05" stroke="url(#g)" stroke-width="3"/>
+  <circle cx="356" cy="224" r="7" fill="#22d3ee"/><circle cx="380" cy="224" r="7" fill="#8b5cf6"/><circle cx="404" cy="224" r="7" fill="#ec4899"/>
+  <rect x="360" y="270" width="320" height="26" rx="6" fill="url(#g)" opacity=".7"/>
+  <rect x="360" y="316" width="520" height="14" rx="6" fill="#fff" opacity=".18"/>
+  <rect x="360" y="344" width="440" height="14" rx="6" fill="#fff" opacity=".12"/>
+  <text x="640" y="470" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-weight="700" font-size="34" fill="#ffffff" opacity=".85">Image coming soon</text>
+</svg>
