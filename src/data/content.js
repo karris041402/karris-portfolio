@@ -7,7 +7,7 @@
 /* ------------------------------ PROFILE --------------------------------- */
 export const profile = {
   // EDIT: your full name
-  name: 'Harris M. Angkua',
+  name: 'Harris Angkua',
   // EDIT: brand / business name shown beside the logo
   brand: 'Karris',
   // EDIT: 1-3 letters for the logo monogram
@@ -77,7 +77,7 @@ export const about = {
   // EDIT: your story, 2-3 short paragraphs
   paragraphs: [
     "I'm a fourth-year student working toward becoming a full-stack developer, based in the Philippines. I embrace AI-assisted development and actively study system architecture and system design, using LLMs to move faster while keeping the quality of what I ship high.",
-    "I'm a technology enthusiast who loves to learn every day, and I'd love to learn with others. My passions are full-stack development, AI-assisted engineering and turning ideas into real-world applications, from face recognition systems to ML models.",
+    "I'm a technology enthusiast who loves to learn every day, and I'd love to learn with others. My passions are full-stack development, AI-assisted engineering and turning ideas into real-world applications, from face recognition systems to ML models. I ship with Vercel, Cloudflared and GitHub Actions, and I have basic networking knowledge.",
   ],
   highlights: ['Full-stack: web, mobile and AI', 'AI-assisted, quality-first engineering', 'Always learning, open to collaborate'],
   // Shown as chips under the highlights. Set to [] to hide.
@@ -204,6 +204,8 @@ groups: [
         { name: 'Geofencing & location tracking', level: 78 },
         { name: 'Cron jobs & task automation', level: 82 },
         { name: 'Git, GitHub, npm, PowerShell', level: 88 },
+        { name: 'Vercel, Cloudflared, GitHub Actions', level: 80 },
+        { name: 'Networking (basic)', level: 55 },
       ],
     },
   ],
