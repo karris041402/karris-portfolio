@@ -18,7 +18,7 @@ export const profile = {
   location: "Manila, Philippines",
   role: "Full-Stack Developer · 4th-Year Student",
   // EDIT: shown in the browser tab (also update index.html for crawlers)
-  siteTitle: "Karris | Harris Angkua: Web & Software Developer in Manila",
+  siteTitle: "Karris | Software Developer",
   siteDescription:
     "Harris Angkua (Karris) builds web, mobile and AI-powered systems, plus automation and UI/UX, for businesses and students in the Philippines.",
   // EDIT: main tagline (typed first in the hero, reused in the footer)
@@ -298,11 +298,19 @@ export const projects: Project[] = [
   {
     id: "leadscout",
     title: "LeadScout: Local Business Lead Finder",
-    description: "Finds local businesses with no website in OpenStreetMap data and manages them as sales leads.",
+    description:
+      "Finds local businesses with no website in OpenStreetMap data and manages them as sales leads.",
     longDescription:
       "A lead-generation platform that helps users find local businesses with no website listed in OpenStreetMap data. Businesses appear on an interactive map and can be managed as potential sales leads. Uses free public APIs: Nominatim for location search and geocoding, Overpass API for business discovery, and OpenStreetMap with Leaflet for mapping. Businesses are categorized as no website, has website, needs verification, or unknown. Built with a Laravel 13 backend and a React/TypeScript frontend.",
     category: "Web App",
-    tech: ["React", "TypeScript", "Laravel", "Leaflet", "OpenStreetMap", "Overpass API"],
+    tech: [
+      "React",
+      "TypeScript",
+      "Laravel",
+      "Leaflet",
+      "OpenStreetMap",
+      "Overpass API",
+    ],
     folder: "leadscout",
     link: "",
     featured: true,
@@ -310,10 +318,19 @@ export const projects: Project[] = [
   {
     id: "saams",
     title: "SAAMS: Student Assistant Attendance Management System",
-    description: "Attendance, scheduling and payroll validation for student assistants, with face recognition and GPS geofencing.",
-    longDescription: "An EARIST-focused system for managing student assistant operations. Facial recognition with liveness verification and GPS geofencing confirm attendance, alongside scheduling, Daily Time Records (DTR), announcements, requirements tracking and payroll validation. Supports three roles: Student Assistant, Human Resources and Super Administrator. Built with a React/TypeScript frontend, a Laravel/PHP backend on PostgreSQL, and a Python FastAPI face-recognition service using InsightFace/ArcFace embeddings.",
+    description:
+      "Attendance, scheduling and payroll validation for student assistants, with face recognition and GPS geofencing.",
+    longDescription:
+      "An EARIST-focused system for managing student assistant operations. Facial recognition with liveness verification and GPS geofencing confirm attendance, alongside scheduling, Daily Time Records (DTR), announcements, requirements tracking and payroll validation. Supports three roles: Student Assistant, Human Resources and Super Administrator. Built with a React/TypeScript frontend, a Laravel/PHP backend on PostgreSQL, and a Python FastAPI face-recognition service using InsightFace/ArcFace embeddings.",
     category: "Web App",
-    tech: ["React","TypeScript","Laravel","PostgreSQL","FastAPI","InsightFace"],
+    tech: [
+      "React",
+      "TypeScript",
+      "Laravel",
+      "PostgreSQL",
+      "FastAPI",
+      "InsightFace",
+    ],
     folder: "saams",
     cover: "saams-2.jpg",
     link: "",
@@ -322,10 +339,12 @@ export const projects: Project[] = [
   {
     id: "bras",
     title: "BRAS: Bangsamoro Reading Assessment System",
-    description: "Web platform that helps teachers assess and monitor students' reading abilities.",
-    longDescription: "A web-based reading assessment platform for teachers and students. It provides reading materials, live assessments, student management, teacher dashboards, assessment reports and progress tracking, so reading evaluation is more organized, accessible and data-driven. Built with Next.js, React, TypeScript and Tailwind CSS.",
+    description:
+      "Web platform that helps teachers assess and monitor students' reading abilities.",
+    longDescription:
+      "A web-based reading assessment platform for teachers and students. It provides reading materials, live assessments, student management, teacher dashboards, assessment reports and progress tracking, so reading evaluation is more organized, accessible and data-driven. Built with Next.js, React, TypeScript and Tailwind CSS.",
     category: "Web App",
-    tech: ["Next.js","React","TypeScript","Tailwind CSS"],
+    tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     folder: "bras",
     link: "",
     featured: true,
@@ -333,10 +352,12 @@ export const projects: Project[] = [
   {
     id: "gaitassist",
     title: "GaitAssist: Gait Pattern Classification",
-    description: "Thesis: analyzes patients' gait videos for physical therapists using MediaPipe, CNN and Random Forest.",
-    longDescription: "Thesis project: \"Adaptive Gait Pattern Classification Using MediaPipe, CNN and Random Forest for Gait Deviation Assessment and Rehabilitation Monitoring in Physical Therapy.\" Helps licensed physical therapists analyze walking patterns from gait videos. MediaPipe extracts pose landmarks, a 1D CNN and Random Forest classify gait, and adaptive recalibration improves monitoring over time. Includes a React frontend for capturing videos and viewing results, a Flask backend serving the trained model and session history, an offline training pipeline and shared gait-feature tools.",
+    description:
+      "Thesis: analyzes patients' gait videos for physical therapists using MediaPipe, CNN and Random Forest.",
+    longDescription:
+      'Thesis project: "Adaptive Gait Pattern Classification Using MediaPipe, CNN and Random Forest for Gait Deviation Assessment and Rehabilitation Monitoring in Physical Therapy." Helps licensed physical therapists analyze walking patterns from gait videos. MediaPipe extracts pose landmarks, a 1D CNN and Random Forest classify gait, and adaptive recalibration improves monitoring over time. Includes a React frontend for capturing videos and viewing results, a Flask backend serving the trained model and session history, an offline training pipeline and shared gait-feature tools.',
     category: "AI/ML",
-    tech: ["React","Flask","MediaPipe","1D CNN","Random Forest"],
+    tech: ["React", "Flask", "MediaPipe", "1D CNN", "Random Forest"],
     folder: "gaitassist",
     link: "",
     featured: true,
@@ -344,10 +365,12 @@ export const projects: Project[] = [
   {
     id: "inforsure",
     title: "InforSure: Health Claim Verification",
-    description: "AI-powered Chrome extension that checks whether online health claims may be reliable or misleading.",
-    longDescription: "Highlight text on a webpage or upload an image for OCR. InforSure checks that the content is health-related, classifies the claim with an XLM-RoBERTa model, retrieves supporting evidence from a validated database and verifies it with natural language inference. Shows separate model-prediction and evidence results with source links. An experimental fact-checking and research tool, not a replacement for medical professionals. Chrome extension with a local FastAPI backend.",
+    description:
+      "AI-powered Chrome extension that checks whether online health claims may be reliable or misleading.",
+    longDescription:
+      "Highlight text on a webpage or upload an image for OCR. InforSure checks that the content is health-related, classifies the claim with an XLM-RoBERTa model, retrieves supporting evidence from a validated database and verifies it with natural language inference. Shows separate model-prediction and evidence results with source links. An experimental fact-checking and research tool, not a replacement for medical professionals. Chrome extension with a local FastAPI backend.",
     category: "AI/ML",
-    tech: ["Chrome Extension","FastAPI","XLM-RoBERTa","OCR","NLI"],
+    tech: ["Chrome Extension", "FastAPI", "XLM-RoBERTa", "OCR", "NLI"],
     folder: "Inforsure",
     link: "",
     featured: false,
@@ -355,10 +378,12 @@ export const projects: Project[] = [
   {
     id: "foodshield",
     title: "FoodShield: Food Allergen Scanner",
-    description: "Flutter app that scans food products and identifies possible allergens.",
-    longDescription: "A Flutter-based mobile application that scans food products and identifies possible allergens, helping users check ingredients and see whether a product may be unsafe based on their allergy information. Supports Android, iOS, web, Windows, macOS and Linux.",
+    description:
+      "Flutter app that scans food products and identifies possible allergens.",
+    longDescription:
+      "A Flutter-based mobile application that scans food products and identifies possible allergens, helping users check ingredients and see whether a product may be unsafe based on their allergy information. Supports Android, iOS, web, Windows, macOS and Linux.",
     category: "Mobile App",
-    tech: ["Flutter","Dart","Cross-platform"],
+    tech: ["Flutter", "Dart", "Cross-platform"],
     folder: "foodshield",
     link: "",
     featured: false,
@@ -366,10 +391,19 @@ export const projects: Project[] = [
   {
     id: "aura",
     title: "AuRA: Autism Risk Analytics",
-    description: "Thesis: autism education and pre-screening app powered by an ML ensemble.",
-    longDescription: "A research-based autism education and pre-screening application developed as a thesis project. React/TypeScript frontend with a FastAPI backend and PostgreSQL database handle authentication, onboarding, questionnaires, chat history and results. Saved Logistic Regression, Random Forest and XGBoost models vote with equal weight to produce provisional, score-based categories. For educational and research purposes only; not a medical diagnosis.",
+    description:
+      "Thesis: autism education and pre-screening app powered by an ML ensemble.",
+    longDescription:
+      "A research-based autism education and pre-screening application developed as a thesis project. React/TypeScript frontend with a FastAPI backend and PostgreSQL database handle authentication, onboarding, questionnaires, chat history and results. Saved Logistic Regression, Random Forest and XGBoost models vote with equal weight to produce provisional, score-based categories. For educational and research purposes only; not a medical diagnosis.",
     category: "AI/ML",
-    tech: ["React","TypeScript","FastAPI","PostgreSQL","XGBoost","Random Forest"],
+    tech: [
+      "React",
+      "TypeScript",
+      "FastAPI",
+      "PostgreSQL",
+      "XGBoost",
+      "Random Forest",
+    ],
     folder: "AuRA",
     link: "",
     featured: true,
@@ -377,10 +411,12 @@ export const projects: Project[] = [
   {
     id: "payslip-generator",
     title: "Payslip Generator System",
-    description: "PHP payroll app that imports Excel data and generates, manages and emails payslips.",
-    longDescription: "A PHP-based payroll management application for generating and managing employee payslips. Supports employee records, payroll processing, Excel payroll imports, payslip history, manual payslips, email delivery, employee search and remittance tracking, with separate workflows for regular, job-order and special payroll employees. Uses SQLite, PhpSpreadsheet, PHPMailer and a chatbot support feature.",
+    description:
+      "PHP payroll app that imports Excel data and generates, manages and emails payslips.",
+    longDescription:
+      "A PHP-based payroll management application for generating and managing employee payslips. Supports employee records, payroll processing, Excel payroll imports, payslip history, manual payslips, email delivery, employee search and remittance tracking, with separate workflows for regular, job-order and special payroll employees. Uses SQLite, PhpSpreadsheet, PHPMailer and a chatbot support feature.",
     category: "Business",
-    tech: ["PHP","SQLite","PhpSpreadsheet","PHPMailer"],
+    tech: ["PHP", "SQLite", "PhpSpreadsheet", "PHPMailer"],
     folder: "payslip-generator",
     link: "",
     featured: false,
@@ -388,10 +424,12 @@ export const projects: Project[] = [
   {
     id: "furtualcare",
     title: "FurtualCare: Pet-Care & Vet Management",
-    description: "PHP system for Mt. Zion Animal Clinic: appointments, shop and orders.",
-    longDescription: "A PHP-based pet-care and veterinary service management system for Mt. Zion Animal Clinic. Users register, book veterinary appointments, manage pet-care services, buy products and track orders. An admin dashboard manages appointments, products, inventory and orders. Includes email OTP verification, Google authentication, user profiles, service-provider accounts and PDF generation.",
+    description:
+      "PHP system for Mt. Zion Animal Clinic: appointments, shop and orders.",
+    longDescription:
+      "A PHP-based pet-care and veterinary service management system for Mt. Zion Animal Clinic. Users register, book veterinary appointments, manage pet-care services, buy products and track orders. An admin dashboard manages appointments, products, inventory and orders. Includes email OTP verification, Google authentication, user profiles, service-provider accounts and PDF generation.",
     category: "Business",
-    tech: ["PHP","Google Auth","Email OTP","PDF"],
+    tech: ["PHP", "Google Auth", "Email OTP", "PDF"],
     folder: "FurtualCare",
     link: "",
     featured: false,
