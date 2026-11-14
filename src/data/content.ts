@@ -1,4 +1,4 @@
-import profilePhoto from "../assets/profile/profile.jpg";
+import profilePhoto from "../assets/profile/profile.png";
 /* ==========================================================================
    content.ts — THE ONLY FILE YOU NEED TO EDIT.
    Every text, image path, price, link and visual setting lives here.
