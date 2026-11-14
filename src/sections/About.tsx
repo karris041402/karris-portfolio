@@ -10,7 +10,7 @@ export default function About() {
   return (
     <section id="about" aria-labelledby="about-title" className="section-pad">
       <div className="container-x">
-        <SectionHeading id="about-title" eyebrow={about.eyebrow} title={about.title} />
+        <SectionHeading id="about-title" title={about.title} />
 
         <div className="grid items-center gap-8 md:grid-cols-[240px_1fr] md:gap-10 lg:grid-cols-[280px_1fr] lg:gap-14">
           <Reveal variant="left" className="mx-auto w-44 sm:w-56 md:w-full">

@@ -20,7 +20,7 @@ export default function Projects() {
   return (
     <section id="projects" aria-labelledby="projects-title" className="section-pad">
       <div className="container-x">
-        <SectionHeading id="projects-title" eyebrow={projectsSection.eyebrow} title={projectsSection.title} subtitle={projectsSection.subtitle} />
+        <SectionHeading id="projects-title" title={projectsSection.title} subtitle={projectsSection.subtitle} />
 
         <Reveal>
           <div role="group" aria-label="Filter projects by category" className="mb-12 flex flex-wrap justify-center gap-3">

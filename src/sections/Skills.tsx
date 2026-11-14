@@ -10,7 +10,7 @@ export default function Skills() {
     <section id="skills" aria-labelledby="skills-title" className="section-pad">
       <CodeRain />
       <div className="container-x relative">
-        <SectionHeading id="skills-title" eyebrow={skills.eyebrow} title={skills.title} subtitle={skills.subtitle} />
+        <SectionHeading id="skills-title" title={skills.title} subtitle={skills.subtitle} />
         <div className="grid gap-6 lg:grid-cols-3">
           {skills.groups.map((group, g) => {
             const Icon = getIcon(group.icon);

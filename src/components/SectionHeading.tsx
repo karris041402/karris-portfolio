@@ -2,23 +2,19 @@ import { motion } from 'framer-motion';
 import GlitchText from './GlitchText';
 import Reveal from './Reveal';
 
-/** Eyebrow + glitch/scramble title + animated underline + subtitle. */
+/** Glitch/scramble title + animated underline + subtitle. */
 interface Props {
   id: string;
-  eyebrow: string;
   title: string;
   subtitle?: string;
   align?: 'center' | 'left';
 }
 
-export default function SectionHeading({ id, eyebrow, title, subtitle, align = 'center' }: Props) {
+export default function SectionHeading({ id, title, subtitle, align = 'center' }: Props) {
   const center = align === 'center';
   return (
     <div className={`mb-10 max-w-3xl md:mb-14 ${center ? 'mx-auto text-center' : ''}`}>
-      <Reveal>
-        <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">{`// ${eyebrow}`}</p>
-      </Reveal>
-      <h2 id={id} className="mt-3 break-words font-display text-[1.6rem] font-bold leading-tight text-white min-[400px]:text-3xl sm:text-4xl md:text-5xl">
+      <h2 id={id} className="break-words font-display text-[1.6rem] font-bold leading-tight text-white min-[400px]:text-3xl sm:text-4xl md:text-5xl">
         <GlitchText text={title} />
       </h2>
       <motion.span

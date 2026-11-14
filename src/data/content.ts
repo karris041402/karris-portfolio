@@ -81,7 +81,6 @@ export const hero = {
 
 /* ------------------------------ ABOUT ----------------------------------- */
 export const about = {
-  eyebrow: "About me",
   title: "Always learning, always building",
   // EDIT: your story, 2-3 short paragraphs
   paragraphs: [
@@ -127,7 +126,6 @@ export const about = {
 /* ------------------------------ SERVICES -------------------------------- */
 // `icon` names live in src/lib/icons.js.
 export const services = {
-  eyebrow: "What I do",
   title: "What I can build",
   subtitle: "The areas I work in, from web systems to AI.",
   items: [
@@ -228,7 +226,6 @@ export const services = {
 /* ------------------------------ SKILLS ---------------------------------- */
 // level = 0-100
 export const skills = {
-  eyebrow: "Skills",
   title: "My tech stack",
   subtitle: "The tools I use to design, build and ship systems.",
   // EDIT: replace with your real stack
@@ -281,7 +278,6 @@ export const skills = {
 
 /* ------------------------------ PROJECTS -------------------------------- */
 export const projectsSection = {
-  eyebrow: "Projects",
   title: "Selected projects",
   subtitle:
     "Systems I have built, from thesis research to real-world tools.",
@@ -447,7 +443,6 @@ export const projects: Project[] = [
 /* ------------------------------ PROCESS --------------------------------- */
 // How I build a system, from documentation to deployment. icon: any name from src/lib/icons.ts
 export const process = {
-  eyebrow: "How I build",
   title: "From documentation to deployment",
   subtitle: "My workflow for turning an idea into a complete, working system.",
   steps: [
@@ -504,7 +499,6 @@ export const process = {
 
 /* ------------------------------ CONTACT --------------------------------- */
 export const contact = {
-  eyebrow: "Contact",
   title: "Let's connect",
   subtitle:
     "Open to internships, junior developer roles, freelance work and collaborations. Send me a message and I will reply as soon as I can.",

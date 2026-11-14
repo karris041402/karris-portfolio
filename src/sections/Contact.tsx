@@ -10,7 +10,7 @@ export default function Contact() {
     <section id="contact" aria-labelledby="contact-title" className="section-pad">
       <Constellation />
       <div className="container-x relative">
-        <SectionHeading id="contact-title" eyebrow={contact.eyebrow} title={contact.title} subtitle={contact.subtitle} />
+        <SectionHeading id="contact-title" title={contact.title} subtitle={contact.subtitle} />
 
         <div className="grid gap-10 lg:grid-cols-[1fr_1.15fr]">
           <Reveal variant="left">

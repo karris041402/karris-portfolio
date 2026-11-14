@@ -8,7 +8,7 @@ export default function Services() {
     <section id="services" aria-labelledby="services-title" className="section-pad">
       <CircuitLines />
       <div className="container-x relative">
-        <SectionHeading id="services-title" eyebrow={services.eyebrow} title={services.title} subtitle={services.subtitle} />
+        <SectionHeading id="services-title" title={services.title} subtitle={services.subtitle} />
         {/* 6-column grid so a lone last card is centered on desktop instead of left-aligned */}
         <ul className="grid gap-6 md:grid-cols-2 lg:grid-cols-6">
           {services.items.map((service, i) => {
