@@ -94,11 +94,7 @@ const ProjectCard = forwardRef<HTMLElement, { project: Project; onOpen: (project
                 View Project <ExternalLink className="h-4 w-4" aria-hidden="true" />
                 <span className="sr-only"> (opens in a new tab)</span>
               </a>
-            ) : (
-              <span className="inline-flex items-center rounded-full border border-secondary/40 bg-secondary/10 px-3 py-1 text-xs font-medium text-secondary">
-                Case study coming soon
-              </span>
-            )}
+            ) : null}
           </div>
         </div>
       </TiltCard>

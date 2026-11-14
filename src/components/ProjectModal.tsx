@@ -215,11 +215,7 @@ export default function ProjectModal({ project, onClose }: { project: Project; o
                 View Project <ExternalLink className="h-4 w-4" aria-hidden="true" />
                 <span className="sr-only"> (opens in a new tab)</span>
               </a>
-            ) : (
-              <span className="inline-flex items-center rounded-full border border-secondary/40 bg-secondary/10 px-4 py-2 text-sm font-medium text-secondary">
-                Case study coming soon
-              </span>
-            )}
+            ) : null}
           </div>
         </div>
       </motion.div>

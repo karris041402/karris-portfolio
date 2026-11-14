@@ -37,8 +37,6 @@ export const profile = {
   // EDIT: images. Each is a plain path, replace the file or change the string.
   // profile portrait: 800x1000 px (4:5), face roughly centered
   profileImage: profilePhoto,
-  // about banner: 1920x820 px (wide), keep the important part in the middle
-  aboutBanner: "/images/about-banner.jpg",
   // fallback shown whenever any image fails to load
   fallbackImage: "/images/placeholder.svg",
 };
@@ -292,7 +290,7 @@ export const projectFilters: ProjectFilter[] = [
 // Screenshots: drop images in src/assets/project/<folder>/ and set `folder` to that folder's name
 // (case-sensitive). Every image in the folder becomes the gallery, sorted by filename.
 // `cover` (optional) = filename to use as the card image; otherwise the first file is used.
-// link: a full URL, or "" (empty) to show a "Case study coming soon" badge.
+// link: a full URL, or "" (empty) to hide the "View Project" button.
 // category must match one of the filter values above: "Web App" | "Mobile App" | "AI/ML" | "Business"
 export const projects: Project[] = [
   {

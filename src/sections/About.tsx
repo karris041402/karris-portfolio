@@ -1,11 +1,9 @@
 import { Check } from 'lucide-react';
-import { about, profile } from '../data/content';
+import { about } from '../data/content';
 import Counter from '../components/Counter';
-import Parallax from '../components/Parallax';
 import ProfileFrame from '../components/ProfileFrame';
 import Reveal from '../components/Reveal';
 import SectionHeading from '../components/SectionHeading';
-import SmoothImage from '../components/SmoothImage';
 
 export default function About() {
   return (
@@ -13,17 +11,7 @@ export default function About() {
       <div className="container-x">
         <SectionHeading id="about-title" eyebrow={about.eyebrow} title={about.title} />
 
-        {/* banner with parallax image */}
-        <Reveal>
-          <div className="gradient-border relative aspect-[16/9] overflow-hidden rounded-3xl sm:aspect-[21/9]">
-            <Parallax speed={0.12} className="absolute -inset-y-[12%] inset-x-0">
-              <SmoothImage src={profile.aboutBanner} alt="" width={1920} height={820} />
-            </Parallax>
-            <div className="absolute inset-0 bg-gradient-to-t from-ink-950/80 to-transparent" aria-hidden="true" />
-          </div>
-        </Reveal>
-
-        <div className="relative z-10 -mt-14 grid gap-8 px-0 sm:-mt-24 sm:gap-10 sm:px-6 lg:grid-cols-[320px_1fr] lg:gap-14">
+        <div className="relative z-10 grid gap-8 px-0 sm:gap-10 sm:px-6 lg:grid-cols-[320px_1fr] lg:gap-14">
           <Reveal variant="left" className="mx-auto w-40 sm:w-64 lg:w-full">
             <ProfileFrame />
           </Reveal>

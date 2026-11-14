@@ -22,7 +22,7 @@ export interface Project {
   folder: string;
   /** Optional filename inside `folder` to use as the card cover. Defaults to the first file. */
   cover?: string;
-  /** Full URL, or "" to show the "Case study coming soon" badge. */
+  /** Full URL, or "" to hide the "View Project" button. */
   link: string;
   featured: boolean;
 }
