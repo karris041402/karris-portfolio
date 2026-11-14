@@ -5,8 +5,8 @@ import { useReducedMotion } from '../hooks/useReducedMotion';
 const CHARS = '!<>-_\\/[]{}=+*^?#01';
 
 /*
-  Scramble-in heading. Runs once when scrolled into view (and `play` is true),
-  and again on hover. Screen readers get the real text via aria-label.
+  Scramble-in heading. Runs once when scrolled into view (and `play` is true).
+  Screen readers get the real text via aria-label.
 */
 interface Props {
   text: string;
@@ -66,7 +66,6 @@ export default function GlitchText({ text, as = 'span', className = '', play = t
     <Tag
       ref={ref}
       aria-label={text}
-      onPointerEnter={visible ? scramble : undefined}
       className={`${className} ${visible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-200`}
     >
       <span aria-hidden="true">{out}</span>
