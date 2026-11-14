@@ -169,6 +169,7 @@ export default function ParticlesBackground() {
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0">
       <ErrorBoundary>
         <Canvas
+          key={lite ? "lite" : "full"}
           dpr={lite ? 1 : [1, 1.5]}
           camera={{ position: [0, 0, 7], fov: 55 }}
           frameloop={frameloop}
