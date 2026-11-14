@@ -1,6 +1,6 @@
-import { lazy, Suspense, useCallback, useEffect, useMemo, useState } from 'react';
+import { lazy, Suspense, useCallback, useEffect, useState } from 'react';
 import { AnimatePresence } from 'framer-motion';
-import { nav, pricing, profile } from './data/content';
+import { nav, profile } from './data/content';
 import { SettingsProvider } from './context/SettingsContext';
 import { ScrollTrigger } from './lib/gsap';
 import AuroraBackground from './components/AuroraBackground';
@@ -13,7 +13,6 @@ import ScrollProgress from './components/ScrollProgress';
 import About from './sections/About';
 import Contact from './sections/Contact';
 import Hero from './sections/Hero';
-import Pricing from './sections/Pricing';
 import Process from './sections/Process';
 import Projects from './sections/Projects';
 import Services from './sections/Services';
@@ -25,8 +24,6 @@ const ParticlesBackground = lazy(() => import('./components/ParticlesBackground'
 function Shell() {
   const [ready, setReady] = useState(false);
   const onBooted = useCallback(() => setReady(true), []);
-  // Drop the Pricing link when pricing is switched off in content.ts.
-  const navItems = useMemo(() => nav.filter((i) => i.id !== 'pricing' || pricing.enabled), []);
 
   // Title + description come from content.ts
   useEffect(() => {
@@ -58,7 +55,7 @@ function Shell() {
 
       <Cursor />
       <ScrollProgress />
-      <Navbar items={navItems} />
+      <Navbar items={nav} />
 
       <main id="main" className="relative z-10">
         <Hero ready={ready} />
@@ -67,11 +64,10 @@ function Shell() {
         <Skills />
         <Projects />
         <Process />
-        {pricing.enabled && <Pricing />}
         <Contact />
       </main>
 
-      <Footer items={navItems} />
+      <Footer items={nav} />
     </>
   );
 }

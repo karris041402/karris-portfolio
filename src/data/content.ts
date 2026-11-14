@@ -1,7 +1,7 @@
 import profilePhoto from "../assets/profile/profile.png";
 /* ==========================================================================
    content.ts — THE ONLY FILE YOU NEED TO EDIT.
-   Every text, image path, price, link and visual setting lives here.
+   Every text, image path, link and visual setting lives here.
    Search for "EDIT:" to find every spot that needs your real details.
    ========================================================================== */
 
@@ -20,15 +20,15 @@ export const profile = {
   // EDIT: shown in the browser tab (also update index.html for crawlers)
   siteTitle: "Karris | Software Developer",
   siteDescription:
-    "Harris Angkua (Karris) builds web, mobile and AI-powered systems, plus automation and UI/UX, for businesses and students in the Philippines.",
+    "Harris Angkua (Karris) is a full-stack developer from the Philippines building web, mobile and AI-powered systems, from documentation and database design to deployment.",
   // EDIT: main tagline (typed first in the hero, reused in the footer)
   tagline:
-    "I build web, mobile and AI-powered software that grows your business",
+    "Full-stack developer building web, mobile and AI-powered systems",
   // EDIT: one or two sentences under the headline
   valueStatement:
-    "Full-stack web apps, Flutter mobile apps and machine learning systems that look sharp, run fast and save you time. From first sketch to launch day, you work with one person who cares about your results.",
+    "I design and build complete systems: full-stack web apps, Flutter mobile apps and machine learning projects, from requirements and database schema all the way to deployment.",
   // EDIT: availability pill in the hero. Set to "" to hide it.
-  availability: "Open for new clients",
+  availability: "Open to opportunities",
 
   // EDIT (logo): leave "" to use the built-in animated <Logo />.
   // To use your own file, drop it in public/images/logo.svg and set: "/images/logo.svg"
@@ -42,14 +42,13 @@ export const profile = {
 };
 
 /* ------------------------------ NAVIGATION ------------------------------ */
-// "id" must match a section id. The Pricing link hides itself if pricing.enabled is false.
+// "id" must match a section id.
 export const nav: NavItem[] = [
   { id: "about", label: "About" },
-  { id: "services", label: "Services" },
+  { id: "services", label: "What I Do" },
   { id: "skills", label: "Skills" },
   { id: "projects", label: "Projects" },
-  { id: "process", label: "Process" },
-  { id: "pricing", label: "Pricing" },
+  { id: "process", label: "How I Build" },
   { id: "contact", label: "Contact" },
 ];
 
@@ -57,13 +56,13 @@ export const nav: NavItem[] = [
 export const hero = {
   // The first phrase should be your main tagline. Others rotate after it.
   typingPhrases: [
-    "I build web, mobile and AI-powered software that grows your business",
+    "I build full-stack web, mobile and AI-powered systems",
+    "I design databases and system architecture",
     "I teach machines to recognize faces, speech and patterns",
-    "I automate the boring work so you can focus",
-    "I design interfaces people love to use",
+    "I ship with Vercel, Cloudflared and GitHub Actions",
   ],
   primaryCta: { label: "View My Work", href: "#projects" },
-  secondaryCta: { label: "Hire Me", href: "#contact" },
+  secondaryCta: { label: "Contact Me", href: "#contact" },
   // Floating "UI fragments" around the 3D graphic. `icon` must exist in src/lib/icons.js.
   chips: [
     { label: "AI / ML ready", icon: "Brain", position: "top-[8%] left-[-2%]" },
@@ -73,7 +72,7 @@ export const hero = {
       position: "top-[22%] right-[-4%]",
     },
     {
-      label: "Real-time automation",
+      label: "System design",
       icon: "Zap",
       position: "bottom-[26%] left-[-6%]",
     },
@@ -103,8 +102,8 @@ export const about = {
     },
     {
       icon: "Rocket",
-      title: "Always learning, open to collaborate",
-      description: "Keen to learn, share ideas and build useful things with great people.",
+      title: "Always learning, open to opportunities",
+      description: "Looking for internships, junior roles and collaborations where I can grow and contribute.",
     },
   ],
   // Shown as chips under the highlights. Set to [] to hide.
@@ -113,32 +112,31 @@ export const about = {
     "AI/ML-powered apps",
     "Multi-role platforms (student / admin / staff)",
     "Automated workflows & scheduling",
-    "Capstone, thesis & portfolio projects",
+    "Thesis & research projects",
     "Educational technology",
   ],
   // EDIT: numbers shown as animated counters
   stats: [
-    { value: 5, suffix: "+", label: "Featured projects" },
-    { value: 7, suffix: "", label: "Services offered" },
+    { value: 9, suffix: "", label: "Projects built" },
+    { value: 3, suffix: "", label: "AI/ML projects" },
     { value: 15, suffix: "+", label: "Technologies" },
-    { value: 100, suffix: "%", label: "Client focused" },
+    { value: 4, suffix: "th", label: "Year student" },
   ],
 };
 
 /* ------------------------------ SERVICES -------------------------------- */
 // `icon` names live in src/lib/icons.js.
 export const services = {
-  eyebrow: "Services",
-  title: "Everything your business needs online",
-  subtitle:
-    "Pick one service or combine them. Every project is built around your goals.",
+  eyebrow: "What I do",
+  title: "What I can build",
+  subtitle: "The areas I work in, from web systems to AI.",
   items: [
     {
       id: "software-web",
       icon: "Code2",
       title: "Software & Web Development",
       description:
-        "Full-stack web applications, from the frontend to the database, built around how your organization works.",
+        "Full-stack web applications, from the frontend to the database, built around how the organization works.",
       includes: [
         "Full-stack web apps (frontend to database)",
         "Multi-role and multi-interface platforms",
@@ -156,7 +154,7 @@ export const services = {
         "Flutter & Dart apps",
         "Responsive, adaptive UI",
         "Camera, location and device features",
-        "Connected to your backend",
+        "Connected to a backend API",
       ],
     },
     {
@@ -203,12 +201,12 @@ export const services = {
       icon: "Clapperboard",
       title: "Video Editing",
       description:
-        "Polished videos for promos, social media, tutorials and events that hold attention.",
+        "Promo, tutorial and event videos with clean cuts, pacing and captions.",
       includes: [
         "Cuts, transitions and pacing",
         "Color, audio and captions",
         "Social-ready formats",
-        "Revisions until you are happy",
+        "Promos, tutorials and events",
       ],
     },
     {
@@ -216,7 +214,7 @@ export const services = {
       icon: "Workflow",
       title: "Document Management & Diagrams",
       description:
-        "Clear flowcharts, diagrams and organized documents so your processes are easy to follow.",
+        "Clear flowcharts, diagrams and organized documents so processes are easy to follow.",
       includes: [
         "Flowcharts and system diagrams",
         "Process and workflow documentation",
@@ -231,9 +229,8 @@ export const services = {
 // level = 0-100
 export const skills = {
   eyebrow: "Skills",
-  title: "The stack behind your site",
-  subtitle:
-    "Modern, proven tools chosen for speed, reliability and easy maintenance.",
+  title: "My tech stack",
+  subtitle: "The tools I use to design, build and ship systems.",
   // EDIT: replace with your real stack
   groups: [
     {
@@ -285,9 +282,9 @@ export const skills = {
 /* ------------------------------ PROJECTS -------------------------------- */
 export const projectsSection = {
   eyebrow: "Projects",
-  title: "Recent work",
+  title: "Selected projects",
   subtitle:
-    "A few projects that show how design and development turn into results.",
+    "Systems I have built, from thesis research to real-world tools.",
 };
 
 // Filter buttons. `value` must match a project category (or "All").
@@ -448,106 +445,59 @@ export const projects: Project[] = [
 ];
 
 /* ------------------------------ PROCESS --------------------------------- */
+// How I build a system, from documentation to deployment. icon: any name from src/lib/icons.ts
 export const process = {
-  eyebrow: "Process",
-  title: "From idea to launch, step by step",
-  subtitle:
-    "A simple, transparent workflow so you always know what happens next.",
+  eyebrow: "How I build",
+  title: "From documentation to deployment",
+  subtitle: "My workflow for turning an idea into a complete, working system.",
   steps: [
     {
       icon: "Search",
-      title: "Discovery",
+      title: "Documentation & Requirements",
       description:
-        "We talk about your business, your customers and your goals. You get a clear plan and quote.",
+        "I start by writing down the problem: users and roles, features, workflows and constraints, so the scope is clear before any code exists.",
+    },
+    {
+      icon: "Workflow",
+      title: "System Design",
+      description:
+        "Architecture, flowcharts and use-case diagrams that map how every module, role and service fits together.",
+    },
+    {
+      icon: "Server",
+      title: "Database Schema",
+      description:
+        "I design the ERD, tables, relationships and constraints, normalize the data, and plan migrations before building features on top.",
     },
     {
       icon: "PenTool",
-      title: "Design",
+      title: "UI/UX Design",
       description:
-        "I design the look and layout. You review it and request changes before any code is written.",
+        "Wireframes and clickable prototypes in Figma, designed mobile-first, so the interface is settled before development.",
     },
     {
       icon: "Code2",
-      title: "Development",
+      title: "Backend & API",
       description:
-        "I build your site: fast, secure and mobile-friendly, with progress updates along the way.",
+        "Authentication, role-based access, business logic and REST APIs on top of the schema, plus ML models served as services where the system needs them.",
+    },
+    {
+      icon: "LayoutTemplate",
+      title: "Frontend",
+      description:
+        "Responsive React interfaces connected to the API, with validation, loading and error states handled properly.",
+    },
+    {
+      icon: "Gauge",
+      title: "Testing & Refinement",
+      description:
+        "I test each role and workflow, including edge cases, then fix and polish on real devices.",
     },
     {
       icon: "Rocket",
-      title: "Launch",
+      title: "Deployment",
       description:
-        "We test everything, connect your domain and go live. I make sure it all works.",
-    },
-    {
-      icon: "LifeBuoy",
-      title: "Support",
-      description:
-        "After launch I stay available for updates, fixes and improvements as your business grows.",
-    },
-  ],
-};
-
-/* ------------------------------ PRICING --------------------------------- */
-export const pricing = {
-  // EDIT: set to false to hide the whole pricing section and its nav link
-  enabled: true,
-  eyebrow: "Pricing",
-  title: "Simple, honest pricing",
-  subtitle:
-    "Budget-friendly rates. Every project is quoted after a free chat about your needs.",
-  // EDIT: replace with your own rates (or "Contact for quote")
-  plans: [
-    {
-      id: "starter",
-      name: "Starter",
-      price: "Contact for quote",
-      period: "",
-      description:
-        "A polished one-page website to get your business online fast.",
-      features: [
-        "1-page landing site",
-        "Mobile responsive",
-        "Contact form",
-        "Basic SEO",
-        "1 round of revisions",
-      ],
-      popular: false,
-      cta: "Get Started",
-    },
-    {
-      id: "business",
-      name: "Business",
-      price: "Contact for quote",
-      period: "",
-      description:
-        "A complete multi-page website built to attract and convert customers.",
-      features: [
-        "Up to 6 pages",
-        "Custom design and animations",
-        "Domain and hosting setup",
-        "SEO and analytics",
-        "3 rounds of revisions",
-        "30 days free support",
-      ],
-      popular: true,
-      cta: "Choose Business",
-    },
-    {
-      id: "custom",
-      name: "Custom",
-      price: "Contact for quote",
-      period: "",
-      description:
-        "Web or mobile systems, AI/ML features and automation built for your exact needs.",
-      features: [
-        "Full-stack web app or Flutter mobile app",
-        "AI / machine learning integration",
-        "Database, admin panel and automation",
-        "Capstone, thesis and portfolio projects",
-        "Priority support",
-      ],
-      popular: false,
-      cta: "Let's Talk",
+        "Ship with Vercel, Cloudflared tunnels and GitHub Actions, with documented setup so the system is easy to run and maintain.",
     },
   ],
 };
@@ -555,8 +505,9 @@ export const pricing = {
 /* ------------------------------ CONTACT --------------------------------- */
 export const contact = {
   eyebrow: "Contact",
-  title: "Let's build something great",
-  subtitle: "Message me to discuss your project. I reply within 24 hours.",
+  title: "Let's connect",
+  subtitle:
+    "Open to internships, junior developer roles, freelance work and collaborations. Send me a message and I will reply as soon as I can.",
   // ★ EDIT: PASTE YOUR FORMSPREE ENDPOINT HERE ★
   // 1. Create a free form at https://formspree.io  2. Copy its URL, e.g.
   //    "https://formspree.io/f/abcdwxyz"  3. Paste it between the quotes below.

@@ -45,17 +45,6 @@ export interface NavItem {
   label: string;
 }
 
-export interface Plan {
-  id: string;
-  name: string;
-  price: string;
-  period: string;
-  description: string;
-  features: string[];
-  popular: boolean;
-  cta: string;
-}
-
 export interface Service {
   id: string;
   icon: string;

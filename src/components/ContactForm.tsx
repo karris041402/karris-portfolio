@@ -81,7 +81,7 @@ export default function ContactForm() {
 
     // ★ Formspree endpoint comes from src/data/content.ts -> contact.formspreeEndpoint
     if (!contact.formspreeEndpoint) {
-      const subject = encodeURIComponent(`Website inquiry from ${values.name}`);
+      const subject = encodeURIComponent(`Portfolio message from ${values.name}`);
       const body = encodeURIComponent(`${values.message}\n\n— ${values.name} (${values.email})`);
       window.location.href = `mailto:${emailAddress}?subject=${subject}&body=${body}`;
       setStatus('mailto');
@@ -169,13 +169,13 @@ export default function ContactForm() {
                 value={values.email}
                 onChange={update}
                 onBlur={onBlur}
-                placeholder="you@business.com"
+                placeholder="you@example.com"
                 aria-invalid={Boolean(errors.email)}
                 aria-describedby="email-error"
                 className={inputClass(errors.email)}
               />
             </Field>
-            <Field id="message" label="Tell me about your project" error={errors.message}>
+            <Field id="message" label="Message" error={errors.message}>
               <textarea
                 id="message"
                 name="message"
@@ -183,7 +183,7 @@ export default function ContactForm() {
                 value={values.message}
                 onChange={update}
                 onBlur={onBlur}
-                placeholder="What does your business do, and what do you need?"
+                placeholder="Hi Harris, I would like to talk about..."
                 aria-invalid={Boolean(errors.message)}
                 aria-describedby="message-error"
                 className={`${inputClass(errors.message)} resize-y`}

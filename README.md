@@ -20,7 +20,7 @@ src/data/content.ts  EVERYTHING you edit
 src/context/       accent color + reduce-motion state
 src/hooks/         useActiveSection, useMousePosition, useReducedMotion, useScrollProgress, useOnScreen
 src/components/    Logo, Navbar, Loader, Cursor, backgrounds, cards, modal, form, ...
-src/sections/      Hero, About, Services, Skills, Projects, Process, Pricing, Contact
+src/sections/      Hero, About, Services, Skills, Projects, Process, Contact
 src/lib/           icons map, gsap setup, helpers
 ```
 
@@ -40,8 +40,6 @@ Also replace `public/favicon.svg`.
 
 **Animation intensity** — `effects` in `content.ts`: particle counts, aurora strength, cursor on/off, code rain on/off.
 Visitors get a "Reduce motion" switch; the OS setting is honored too.
-
-**Hide pricing** — `pricing.enabled: false`.
 
 **Contact form** — create a free form at https://formspree.io, copy its URL, paste into
 `contact.formspreeEndpoint` in `content.ts`. Until then the form opens the visitor's email app.
