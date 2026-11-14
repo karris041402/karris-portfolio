@@ -5,7 +5,7 @@ import { useSettings } from '../context/SettingsContext';
 
 /* Accent-color switcher + "Reduce motion" toggle in a small popover. Choices persist. */
 export default function SettingsMenu() {
-  const { accents, accentId, setAccentId, reduced, setReduceMotion } = useSettings();
+  const { accents, accentId, setAccentId, reduced, setReduceMotion, lite, setLite } = useSettings();
   const [open, setOpen] = useState(false);
   const ref = useRef<HTMLDivElement>(null);
 
@@ -79,6 +79,25 @@ export default function SettingsMenu() {
                 <span
                   className={`absolute left-0.5 top-0.5 h-5 w-5 rounded-full bg-white transition-transform ${
                     reduced ? 'translate-x-5' : ''
+                  }`}
+                />
+              </button>
+            </div>
+            <div className="mt-3 flex items-center justify-between">
+              <span id="lite-label" className="text-sm text-white">
+                Lite mode <span className="text-xs text-white/50">(smoother on weak GPUs)</span>
+              </span>
+              <button
+                type="button"
+                role="switch"
+                aria-checked={lite}
+                aria-labelledby="lite-label"
+                onClick={() => setLite(!lite)}
+                className={`relative h-6 w-11 shrink-0 rounded-full transition-colors ${lite ? 'bg-primary' : 'bg-white/15'}`}
+              >
+                <span
+                  className={`absolute left-0.5 top-0.5 h-5 w-5 rounded-full bg-white transition-transform ${
+                    lite ? 'translate-x-5' : ''
                   }`}
                 />
               </button>

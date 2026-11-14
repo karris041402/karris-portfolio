@@ -144,13 +144,13 @@ function Rig({ c1, c2, c3, mouse, reduced }: { c1: string; c2: string; c3: strin
   );
 }
 
-export default function HeroScene({ colors, mouse, reduced, active }: { colors: string[]; mouse: Mouse; reduced: boolean; active: boolean }) {
+export default function HeroScene({ colors, mouse, reduced, active, lite }: { colors: string[]; mouse: Mouse; reduced: boolean; active: boolean; lite: boolean }) {
   return (
     <Canvas
-      dpr={[1, 1.75]}
+      dpr={lite ? 1 : [1, 1.75]}
       camera={{ position: [0, 0, 10.1], fov: 45 }}
       frameloop={active ? (reduced ? 'demand' : 'always') : 'never'}
-      gl={{ alpha: true, antialias: true, powerPreference: 'high-performance' }}
+      gl={{ alpha: true, antialias: !lite, powerPreference: 'high-performance' }}
     >
       <Rig c1={colors[0]} c2={colors[1]} c3={colors[2]} mouse={mouse} reduced={reduced} />
     </Canvas>

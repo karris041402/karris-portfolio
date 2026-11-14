@@ -26,7 +26,7 @@ export default function HeroGraphic({ ready }: { ready: boolean }) {
   const ref = useRef<HTMLDivElement>(null);
   const active = useOnScreen(ref);
   const mouse = useMousePosition();
-  const { reduced, theme } = useSettings();
+  const { reduced, theme, lite } = useSettings();
 
   return (
     <div ref={ref} className="relative mx-auto aspect-square w-full max-w-[560px]">
@@ -35,7 +35,7 @@ export default function HeroGraphic({ ready }: { ready: boolean }) {
       <ErrorBoundary fallback={<StaticFallback />}>
         <Suspense fallback={null}>
           <div className="pointer-events-none absolute -inset-[20%]" aria-hidden="true">
-            <HeroScene colors={[theme.c1, theme.c2, theme.c3]} mouse={mouse} reduced={reduced} active={active} />
+            <HeroScene colors={[theme.c1, theme.c2, theme.c3]} mouse={mouse} reduced={reduced} active={active} lite={lite} />
           </div>
         </Suspense>
       </ErrorBoundary>

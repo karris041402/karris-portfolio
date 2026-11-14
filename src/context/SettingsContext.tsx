@@ -10,6 +10,9 @@ interface Settings {
   /** true when the OS prefers reduced motion OR the visitor flipped the toggle */
   reduced: boolean;
   setAccentId: (id: string) => void;
+  /** Lite mode: cheaper effects for weak GPUs (auto-detected, or chosen by the visitor) */
+  lite: boolean;
+  setLite: (value: boolean) => void;
   setReduceMotion: (value: boolean) => void;
 }
 
@@ -33,6 +36,12 @@ const write = (key: string, value: unknown): void => {
   }
 };
 
+// Weak hardware: few CPU cores or little RAM.
+const weakDevice = (): boolean => {
+  const nav = navigator as Navigator & { deviceMemory?: number };
+  return (navigator.hardwareConcurrency || 8) <= 4 || (nav.deviceMemory ?? 8) <= 4;
+};
+
 export function SettingsProvider({ children }: { children: ReactNode }) {
   const [accentId, setAccentId] = useState<string>(() => read('accent', defaultAccent));
   // null = follow the OS setting, true/false = visitor's explicit choice
@@ -40,6 +49,38 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
   const [osReduce, setOsReduce] = useState(
     () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
   );
+
+  // null = automatic, true/false = visitor's explicit choice
+  const [userLite, setUserLite] = useState<boolean | null>(() => read<boolean | null>('lite', null));
+  const [autoLite, setAutoLite] = useState(weakDevice);
+
+  // Frame-rate probe: if the page runs under ~40fps for a few seconds, switch to lite automatically.
+  useEffect(() => {
+    if (userLite !== null || autoLite) return undefined;
+    let raf = 0;
+    let last = 0;
+    let slow = 0;
+    let frames = 0;
+    const start = performance.now() + 5000; // skip the loader / first paint
+    const tick = (t: number) => {
+      if (document.visibilityState === 'visible' && t > start) {
+        if (last) {
+          frames++;
+          if (t - last > 28) slow++; // frame slower than ~35fps
+        }
+        last = t;
+        if (frames >= 120) {
+          if (slow / frames > 0.4) setAutoLite(true);
+          return;
+        }
+      } else {
+        last = 0;
+      }
+      raf = requestAnimationFrame(tick);
+    };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [userLite, autoLite]);
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -50,6 +91,7 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
 
   const theme = useMemo(() => accents.find((a) => a.id === accentId) || accents[0], [accentId]);
   const reduced = userReduce ?? osReduce;
+  const lite = userLite ?? autoLite;
 
   useEffect(() => {
     const root = document.documentElement;
@@ -62,12 +104,21 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     document.documentElement.classList.toggle('reduce-motion', reduced);
   }, [reduced]);
 
+  useEffect(() => {
+    document.documentElement.classList.toggle('lite', lite);
+  }, [lite]);
+
   const value = useMemo(
     () => ({
       accents,
       theme,
       accentId: theme.id,
       reduced,
+      lite,
+      setLite: (v: boolean) => {
+        setUserLite(v);
+        write('lite', v);
+      },
       setAccentId: (id: string) => {
         setAccentId(id);
         write('accent', id);
@@ -77,7 +128,7 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
         write('reduce-motion', v);
       },
     }),
-    [theme, reduced],
+    [theme, reduced, lite],
   );
 
   return <SettingsContext.Provider value={value}>{children}</SettingsContext.Provider>;

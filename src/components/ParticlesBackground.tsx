@@ -153,15 +153,15 @@ function Shapes({ colors, reduced }: { colors: string[]; reduced: boolean }) {
 }
 
 export default function ParticlesBackground() {
-  const { reduced, theme } = useSettings();
+  const { reduced, theme, lite } = useSettings();
   const pageVisible = usePageVisible();
   const mouse = useMousePosition();
   const { progress } = useScrollProgress();
   // fewer particles on phones / low-core devices
   const count = useMemo(() => {
     const low = isSmallScreen() || (navigator.hardwareConcurrency || 8) <= 4;
-    return low ? effects.particles.mobile : effects.particles.desktop;
-  }, []);
+    return low || lite ? Math.min(effects.particles.mobile, lite ? 40 : 999) : effects.particles.desktop;
+  }, [lite]);
 
   const frameloop = !pageVisible ? 'never' : reduced ? 'demand' : 'always';
 
@@ -169,7 +169,7 @@ export default function ParticlesBackground() {
     <div aria-hidden="true" className="pointer-events-none fixed inset-0 z-0">
       <ErrorBoundary>
         <Canvas
-          dpr={[1, 1.5]}
+          dpr={lite ? 1 : [1, 1.5]}
           camera={{ position: [0, 0, 7], fov: 55 }}
           frameloop={frameloop}
           gl={{ antialias: false, alpha: true, powerPreference: 'high-performance' }}
@@ -183,7 +183,7 @@ export default function ParticlesBackground() {
             reduced={reduced}
           />
           {/* big wireframe shapes would sit behind text on phones: desktop only */}
-          {!isSmallScreen() && <Shapes colors={[theme.c1, theme.c2, theme.c3]} reduced={reduced} />}
+          {!isSmallScreen() && !lite && <Shapes colors={[theme.c1, theme.c2, theme.c3]} reduced={reduced} />}
         </Canvas>
       </ErrorBoundary>
     </div>

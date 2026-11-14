@@ -48,6 +48,19 @@
   .glass {
     @apply border border-white/10 bg-white/[0.04] backdrop-blur-xl;
   }
+  /* Lite mode (weak GPUs): no backdrop blur, static cheap aurora */
+  html.lite .glass,
+  html.lite [class*='backdrop-blur'] {
+    -webkit-backdrop-filter: none !important;
+    backdrop-filter: none !important;
+  }
+  html.lite .glass { background-color: rgb(10 12 28 / 0.82); }
+  html.lite .aurora-blob {
+    filter: none !important;
+    animation: none !important;
+    -webkit-mask-image: radial-gradient(closest-side, #000, transparent);
+    mask-image: radial-gradient(closest-side, #000, transparent);
+  }
   /* Neon gradient border drawn with a masked pseudo-element */
   .gradient-border { position: relative; }
   .gradient-border::before {
