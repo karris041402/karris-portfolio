@@ -14,7 +14,7 @@ interface Props {
 export default function SectionHeading({ id, eyebrow, title, subtitle, align = 'center' }: Props) {
   const center = align === 'center';
   return (
-    <div className={`mb-14 max-w-3xl md:mb-20 ${center ? 'mx-auto text-center' : ''}`}>
+    <div className={`mb-10 max-w-3xl md:mb-14 ${center ? 'mx-auto text-center' : ''}`}>
       <Reveal>
         <p className="font-mono text-xs uppercase tracking-[0.3em] text-primary">{`// ${eyebrow}`}</p>
       </Reveal>
