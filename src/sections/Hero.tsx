@@ -5,7 +5,6 @@ import { hero, profile } from '../data/content';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 import GlitchText from '../components/GlitchText';
 import HeroGraphic from '../components/HeroGraphic';
-import Logo from '../components/Logo';
 import MagneticButton from '../components/MagneticButton';
 import Parallax from '../components/Parallax';
 
@@ -26,20 +25,7 @@ export default function Hero({ ready }: { ready: boolean }) {
       <div className="container-x grid items-center gap-12 lg:grid-cols-2">
         <Parallax speed={0.07} start="top top">
           <motion.div variants={container} initial="hidden" animate={ready ? 'show' : 'hidden'}>
-            <motion.div variants={item} className="flex flex-wrap items-center gap-4">
-              <Logo size={48} showWordmark={false} />
-              {profile.availability && (
-                <span className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-medium text-primary">
-                  <span className="relative flex h-2 w-2">
-                    <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75" />
-                    <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
-                  </span>
-                  {profile.availability}
-                </span>
-              )}
-            </motion.div>
-
-            <motion.p variants={item} className="mt-8 font-mono text-sm uppercase tracking-[0.3em] text-slate-400">
+            <motion.p variants={item} className="font-mono text-sm uppercase tracking-[0.3em] text-slate-400">
               {profile.role} · {profile.location}
             </motion.p>
 

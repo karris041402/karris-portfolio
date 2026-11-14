@@ -16,8 +16,13 @@ export default function Loader({ onDone }: { onDone: () => void }) {
 
   // lock scroll while booting
   useEffect(() => {
+    // html is the page scroller here (it has overflow-x: clip), so lock it as well as body
+    const html = document.documentElement;
+    window.scrollTo(0, 0);
+    html.style.overflow = 'hidden';
     document.body.style.overflow = 'hidden';
     return () => {
+      html.style.overflow = '';
       document.body.style.overflow = '';
     };
   }, []);
