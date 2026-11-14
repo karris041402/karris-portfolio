@@ -6,6 +6,7 @@ const CHARS = '!<>-_\\/[]{}=+*^?#01';
 
 /*
   Scramble-in heading. Runs once when scrolled into view (and `play` is true).
+  The real text sits invisibly in the flow and the scramble is drawn on top, so nothing around it moves.
   Screen readers get the real text via aria-label.
 */
 interface Props {
@@ -66,9 +67,16 @@ export default function GlitchText({ text, as = 'span', className = '', play = t
     <Tag
       ref={ref}
       aria-label={text}
-      className={`${className} ${visible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-200`}
+      className={`relative inline-block ${visible ? 'opacity-100' : 'opacity-0'} transition-opacity duration-200`}
     >
-      <span aria-hidden="true">{out}</span>
+      {/* the real text reserves the space, so the scrambling characters never change the layout */}
+      <span aria-hidden="true" className={`invisible ${className}`}>
+        {text}
+      </span>
+      {/* styles (e.g. gradient text) go on the visible layer itself: background-clip does not reach positioned children */}
+      <span aria-hidden="true" className={`absolute inset-0 ${className}`}>
+        {out}
+      </span>
     </Tag>
   );
 }
