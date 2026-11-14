@@ -89,10 +89,23 @@ export const about = {
     "I'm a fourth-year student working toward becoming a full-stack developer, based in the Philippines. I embrace AI-assisted development and actively study system architecture and system design, using LLMs to move faster while keeping the quality of what I ship high.",
     "I'm a technology enthusiast who loves to learn every day, and I'd love to learn with others. My passions are full-stack development, AI-assisted engineering and turning ideas into real-world applications, from face recognition systems to ML models. I ship with Vercel, Cloudflared and GitHub Actions, and I have basic networking knowledge.",
   ],
+  // Banner cards under the profile photo. icon: any name from src/lib/icons.ts
   highlights: [
-    "Full-stack: web, mobile and AI",
-    "AI-assisted, quality-first engineering",
-    "Always learning, open to collaborate",
+    {
+      icon: "Code2",
+      title: "Full-stack: web, mobile and AI",
+      description: "From React and Laravel to Flutter apps and machine learning models, end to end.",
+    },
+    {
+      icon: "Sparkles",
+      title: "AI-assisted, quality-first engineering",
+      description: "I use LLMs to move faster, then review, test and refine everything I ship.",
+    },
+    {
+      icon: "Rocket",
+      title: "Always learning, open to collaborate",
+      description: "Keen to learn, share ideas and build useful things with great people.",
+    },
   ],
   // Shown as chips under the highlights. Set to [] to hide.
   perfectFor: [

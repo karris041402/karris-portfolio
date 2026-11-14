@@ -1,4 +1,4 @@
-import { Check } from 'lucide-react';
+import { getIcon } from '../lib/icons';
 import { about } from '../data/content';
 import Counter from '../components/Counter';
 import ProfileFrame from '../components/ProfileFrame';
@@ -12,24 +12,37 @@ export default function About() {
         <SectionHeading id="about-title" eyebrow={about.eyebrow} title={about.title} />
 
         <div className="relative z-10 grid gap-8 px-0 sm:gap-10 sm:px-6 lg:grid-cols-[320px_1fr] lg:gap-14">
-          <Reveal variant="left" className="mx-auto w-40 sm:w-64 lg:w-full">
-            <ProfileFrame />
-          </Reveal>
+          <div className="mx-auto w-full max-w-sm lg:max-w-none">
+            <Reveal variant="left" className="mx-auto w-40 sm:w-64 lg:w-full">
+              <ProfileFrame />
+            </Reveal>
+            <ul className="mt-8 space-y-3">
+              {about.highlights.map((h, i) => {
+                const Icon = getIcon(h.icon);
+                return (
+                  <Reveal key={h.title} delay={i * 0.08}>
+                    <li className="glass gradient-border flex gap-3 rounded-2xl p-4">
+                      <span className="grid h-10 w-10 shrink-0 place-items-center rounded-xl bg-primary/10 text-primary">
+                        <Icon className="h-5 w-5" aria-hidden="true" />
+                      </span>
+                      <div>
+                        <p className="text-sm font-semibold text-white">{h.title}</p>
+                        <p className="mt-1 text-xs leading-relaxed text-slate-400">{h.description}</p>
+                      </div>
+                    </li>
+                  </Reveal>
+                );
+              })}
+            </ul>
+          </div>
 
-          <div className="pt-4 lg:pt-28">
+          <div className="pt-4 lg:pt-6">
             <Reveal>
               <div className="space-y-4 text-base leading-relaxed text-slate-300 sm:text-lg">
                 {about.paragraphs.map((p) => (
                   <p key={p}>{p}</p>
                 ))}
               </div>
-              <ul className="mt-6 flex flex-wrap gap-x-6 gap-y-2 text-sm text-slate-200">
-                {about.highlights.map((h) => (
-                  <li key={h} className="flex items-center gap-2">
-                    <Check className="h-4 w-4 text-primary" aria-hidden="true" /> {h}
-                  </li>
-                ))}
-              </ul>
               {about.perfectFor?.length > 0 && (
                 <div className="mt-8">
                   <p className="mb-3 font-mono text-[11px] uppercase tracking-widest text-primary">Perfect for</p>
