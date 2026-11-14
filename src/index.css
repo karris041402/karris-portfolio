@@ -42,7 +42,7 @@
 
 @layer components {
   .container-x { @apply mx-auto w-full max-w-7xl px-4 sm:px-6 lg:px-8; }
-  .section-pad { @apply relative py-14 md:py-20; }
+  .section-pad { @apply relative py-[53px] md:py-[77px]; }
 
   /* Glassmorphism */
   .glass {
