@@ -6,7 +6,6 @@ import { useMousePosition } from '../hooks/useMousePosition';
 import { useOnScreen } from '../hooks/useOnScreen';
 import { getIcon } from '../lib/icons';
 import ErrorBoundary from './ErrorBoundary';
-import ProfileFrame from './ProfileFrame';
 
 // three.js is split into its own chunk and loaded lazily.
 const HeroScene = lazy(() => import('./HeroScene'));
@@ -61,16 +60,6 @@ export default function HeroGraphic({ ready }: { ready: boolean }) {
           </motion.div>
         );
       })}
-
-      {/* portrait in hex frame */}
-      <motion.div
-        className="absolute -bottom-2 right-0 z-10 w-28 sm:w-36"
-        initial={{ opacity: 0, y: 30 }}
-        animate={ready ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-        transition={{ type: 'spring', stiffness: 90, damping: 14, delay: 0.6 }}
-      >
-        <ProfileFrame eager />
-      </motion.div>
     </div>
   );
 }
