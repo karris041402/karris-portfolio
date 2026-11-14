@@ -118,12 +118,11 @@ function Network({ count, pointColor, lineColor, mouse, scroll, reduced }: Netwo
   );
 }
 
-type ShapeDef = { kind: 'ico' | 'oct' | 'torus'; pos: [number, number, number]; scale: number; color: number };
+type ShapeDef = { kind: 'ico' | 'oct'; pos: [number, number, number]; scale: number; color: number };
 
 const SHAPES: ShapeDef[] = [
   { kind: 'ico', pos: [-5.2, 2.2, -3], scale: 1.1, color: 0 },
   { kind: 'oct', pos: [5.6, -1.6, -2.5], scale: 1.3, color: 1 },
-  { kind: 'torus', pos: [3.2, 3.2, -5], scale: 0.9, color: 2 },
   { kind: 'ico', pos: [-4.4, -3.2, -4], scale: 0.7, color: 1 },
 ];
 
@@ -146,7 +145,6 @@ function Shapes({ colors, reduced }: { colors: string[]; reduced: boolean }) {
       }} position={s.pos} scale={s.scale}>
       {s.kind === 'ico' && <icosahedronGeometry args={[1, 0]} />}
       {s.kind === 'oct' && <octahedronGeometry args={[1, 0]} />}
-      {s.kind === 'torus' && <torusGeometry args={[1, 0.28, 10, 32]} />}
       <meshBasicMaterial color={colors[s.color]} wireframe transparent opacity={0.28} />
     </mesh>
   ));
