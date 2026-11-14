@@ -25,11 +25,7 @@ export default function Hero({ ready }: { ready: boolean }) {
       <div className="container-x grid items-center gap-12 lg:grid-cols-2">
         <Parallax speed={0.07} start="top top">
           <motion.div variants={container} initial="hidden" animate={ready ? 'show' : 'hidden'}>
-            <motion.p variants={item} className="font-mono text-sm uppercase tracking-[0.3em] text-slate-400">
-              {profile.role} · {profile.location}
-            </motion.p>
-
-            <motion.h1 variants={item} id="hero-title" className="mt-3 font-display text-[2rem] font-black leading-tight text-white min-[400px]:text-4xl sm:text-5xl xl:text-6xl">
+            <motion.h1 variants={item} id="hero-title" className="font-display text-[2rem] font-black leading-tight text-white min-[400px]:text-4xl sm:text-5xl xl:text-6xl">
               Hi, I&apos;m <GlitchText text={profile.name} className="text-gradient" play={ready} />
             </motion.h1>
 

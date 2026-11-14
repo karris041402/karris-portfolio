@@ -58,6 +58,7 @@ export const hero = {
   typingPhrases: [
     "I build full-stack web, mobile and AI-powered systems",
     "I design databases and system architecture",
+    "Full-Stack Developer · 4th-Year Student · Manila, Philippines",
     "I teach machines to recognize faces, speech and patterns",
     "I ship with Vercel, Cloudflared and GitHub Actions",
   ],
