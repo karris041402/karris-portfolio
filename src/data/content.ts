@@ -165,8 +165,6 @@ export const services = {
       description:
         "Smart features and custom models that recognize faces, speech and patterns.",
       includes: [
-        "Face recognition & biometric systems",
-        "Speech recognition & text-to-speech",
         "Custom ML models in Python",
         "Dataset sourcing and pipeline development",
       ],
@@ -288,7 +286,6 @@ export const projectFilters: ProjectFilter[] = [
   { label: "Web Apps", value: "Web App" },
   { label: "Mobile", value: "Mobile App" },
   { label: "AI/ML", value: "AI/ML" },
-  { label: "Business", value: "Business" },
 ];
 
 // To add a project, copy one block, paste it, and edit the fields.
@@ -296,7 +293,7 @@ export const projectFilters: ProjectFilter[] = [
 // (case-sensitive). Every image in the folder becomes the gallery, sorted by filename.
 // `cover` (optional) = filename to use as the card image; otherwise the first file is used.
 // link: a full URL, or "" (empty) to hide the "View Project" button.
-// category must match one of the filter values above: "Web App" | "Mobile App" | "AI/ML" | "Business"
+// category must match one of the filter values above: "Web App" | "Mobile App" | "AI/ML"
 export const projects: Project[] = [
   {
     id: "leadscout",
@@ -316,7 +313,6 @@ export const projects: Project[] = [
     ],
     folder: "leadscout",
     link: "",
-    featured: true,
   },
   {
     id: "saams",
@@ -337,7 +333,6 @@ export const projects: Project[] = [
     folder: "saams",
     cover: "saams-2.jpg",
     link: "",
-    featured: true,
   },
   {
     id: "bras",
@@ -350,7 +345,6 @@ export const projects: Project[] = [
     tech: ["Next.js", "React", "TypeScript", "Tailwind CSS"],
     folder: "bras",
     link: "",
-    featured: true,
   },
   {
     id: "gaitassist",
@@ -363,7 +357,6 @@ export const projects: Project[] = [
     tech: ["React", "Flask", "MediaPipe", "1D CNN", "Random Forest"],
     folder: "gaitassist",
     link: "",
-    featured: true,
   },
   {
     id: "inforsure",
@@ -376,7 +369,6 @@ export const projects: Project[] = [
     tech: ["Chrome Extension", "FastAPI", "XLM-RoBERTa", "OCR", "NLI"],
     folder: "Inforsure",
     link: "",
-    featured: false,
   },
   {
     id: "foodshield",
@@ -389,7 +381,6 @@ export const projects: Project[] = [
     tech: ["Flutter", "Dart", "Cross-platform"],
     folder: "foodshield",
     link: "",
-    featured: false,
   },
   {
     id: "aura",
@@ -409,7 +400,6 @@ export const projects: Project[] = [
     ],
     folder: "AuRA",
     link: "",
-    featured: true,
   },
   {
     id: "payslip-generator",
@@ -418,11 +408,10 @@ export const projects: Project[] = [
       "PHP payroll app that imports Excel data and generates, manages and emails payslips.",
     longDescription:
       "A PHP-based payroll management application for generating and managing employee payslips. Supports employee records, payroll processing, Excel payroll imports, payslip history, manual payslips, email delivery, employee search and remittance tracking, with separate workflows for regular, job-order and special payroll employees. Uses SQLite, PhpSpreadsheet, PHPMailer and a chatbot support feature.",
-    category: "Business",
+    category: "Web App",
     tech: ["PHP", "SQLite", "PhpSpreadsheet", "PHPMailer"],
     folder: "payslip-generator",
     link: "",
-    featured: false,
   },
   {
     id: "furtualcare",
@@ -431,11 +420,10 @@ export const projects: Project[] = [
       "PHP system for Mt. Zion Animal Clinic: appointments, shop and orders.",
     longDescription:
       "A PHP-based pet-care and veterinary service management system for Mt. Zion Animal Clinic. Users register, book veterinary appointments, manage pet-care services, buy products and track orders. An admin dashboard manages appointments, products, inventory and orders. Includes email OTP verification, Google authentication, user profiles, service-provider accounts and PDF generation.",
-    category: "Business",
+    category: "Web App",
     tech: ["PHP", "Google Auth", "Email OTP", "PDF"],
     folder: "FurtualCare",
     link: "",
-    featured: false,
   },
 ];
 

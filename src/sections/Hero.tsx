@@ -21,7 +21,7 @@ export default function Hero({ ready }: { ready: boolean }) {
   const reduced = useReducedMotion();
 
   return (
-    <section id="home" aria-labelledby="hero-title" className="relative flex min-h-screen items-center overflow-hidden pb-12 pt-28">
+    <section id="home" aria-labelledby="hero-title" className="relative flex items-center overflow-hidden pb-[53px] pt-28 md:min-h-screen md:pb-12">
       <div className="container-x grid items-center gap-12 lg:grid-cols-2">
         <Parallax speed={0.07} start="top top">
           <motion.div variants={container} initial="hidden" animate={ready ? 'show' : 'hidden'}>

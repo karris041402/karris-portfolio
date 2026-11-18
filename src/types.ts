@@ -9,7 +9,7 @@ export interface Accent {
   c3: string;
 }
 
-export type ProjectCategory = 'Web App' | 'Mobile App' | 'AI/ML' | 'Business';
+export type ProjectCategory = 'Web App' | 'Mobile App' | 'AI/ML';
 
 export interface Project {
   id: string;
@@ -24,7 +24,6 @@ export interface Project {
   cover?: string;
   /** Full URL, or "" to hide the "View Project" button. */
   link: string;
-  featured: boolean;
 }
 
 export interface ProjectFilter {

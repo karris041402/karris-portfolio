@@ -73,7 +73,7 @@ export default function ProjectModal({ project, onClose }: { project: Project; o
     };
   }, []);
 
-  const { title, longDescription, category, tech, link, featured } = project;
+  const { title, longDescription, category, tech, link } = project;
 
   return createPortal(
     <motion.div
@@ -185,11 +185,6 @@ export default function ProjectModal({ project, onClose }: { project: Project; o
             <span className="rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-primary">
               {category}
             </span>
-            {featured && (
-              <span className="rounded-full border border-tertiary/40 bg-tertiary/10 px-3 py-1 text-[11px] font-medium text-tertiary">
-                Featured
-              </span>
-            )}
           </div>
           <h3 id="project-modal-title" className="mt-4 font-display text-2xl font-bold text-white sm:text-3xl">
             {title}

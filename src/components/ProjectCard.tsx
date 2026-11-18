@@ -1,6 +1,6 @@
 import { forwardRef, useMemo, useState, type PointerEvent } from 'react';
 import { motion } from 'framer-motion';
-import { ExternalLink, Star } from 'lucide-react';
+import { ExternalLink } from 'lucide-react';
 import type { Project } from '../types';
 import { getProjectImages } from '../lib/projectImages';
 import { profile } from '../data/content';
@@ -16,7 +16,7 @@ const ProjectCard = forwardRef<HTMLElement, { project: Project; onOpen: (project
   { project, onOpen },
   ref,
 ) {
-  const { title, description, category, tech, folder, cover, link, featured } = project;
+  const { title, description, category, tech, folder, cover, link } = project;
   const images = useMemo(() => {
     const found = getProjectImages(folder, cover);
     return found.length ? found : [profile.fallbackImage];
@@ -49,11 +49,6 @@ const ProjectCard = forwardRef<HTMLElement, { project: Project; onOpen: (project
           <span className="absolute left-3 top-3 rounded-full border border-white/15 bg-ink-950/70 px-3 py-1 font-mono text-[11px] uppercase tracking-wider text-primary backdrop-blur">
             {category}
           </span>
-          {featured && (
-            <span className="absolute right-3 top-3 inline-flex items-center gap-1 rounded-full border border-tertiary/40 bg-ink-950/70 px-2.5 py-1 text-[11px] font-medium text-tertiary backdrop-blur">
-              <Star className="h-3 w-3" aria-hidden="true" /> Featured
-            </span>
-          )}
           <span
             aria-hidden="true"
             className="pointer-events-none absolute bottom-3 right-3 rounded-full border border-primary/60 bg-ink-950/70 px-3 py-1 text-xs font-semibold text-white opacity-0 shadow-glow-sm backdrop-blur transition-opacity duration-300 group-hover:opacity-100"
