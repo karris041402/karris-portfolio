@@ -11,6 +11,7 @@ import Counter from './Counter';
 const URL_BASE = import.meta.env.VITE_SUPABASE_URL as string | undefined;
 const KEY = import.meta.env.VITE_SUPABASE_ANON_KEY as string | undefined;
 const FLAG = 'viewed';
+const POLL_MS = 10_000;
 
 async function rpc(fn: 'increment_views' | 'get_views'): Promise<number> {
   const res = await fetch(`${URL_BASE}/rest/v1/rpc/${fn}`, {
@@ -48,6 +49,15 @@ export default function ViewerCount() {
         }
       })
       .catch(() => {});
+
+    // live refresh: re-read the total every 10s while the tab is visible
+    const id = window.setInterval(() => {
+      if (document.hidden) return;
+      rpc('get_views')
+        .then((n) => Number.isFinite(n) && setViews(n))
+        .catch(() => {});
+    }, POLL_MS);
+    return () => window.clearInterval(id);
   }, []);
 
   return (
