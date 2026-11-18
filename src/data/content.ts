@@ -81,7 +81,7 @@ export const hero = {
 
 /* ------------------------------ ABOUT ----------------------------------- */
 export const about = {
-  title: "Always learning, always building",
+  title: "Who am I",
   // EDIT: your story, 2-3 short paragraphs
   paragraphs: [
     "I'm a fourth-year student working toward becoming a full-stack developer, based in the Philippines. I embrace AI-assisted development and actively study system architecture and system design, using LLMs to move faster while keeping the quality of what I ship high.",
@@ -493,7 +493,7 @@ export const contact = {
   // 1. Create a free form at https://formspree.io  2. Copy its URL, e.g.
   //    "https://formspree.io/f/abcdwxyz"  3. Paste it between the quotes below.
   // (Empty = the form opens the visitor's email app instead, so nothing breaks.)
-  formspreeEndpoint: "",
+  formspreeEndpoint: "https://formspree.io/f/xvkaannz",
 };
 
 /* ------------------------------ SOCIALS --------------------------------- */
