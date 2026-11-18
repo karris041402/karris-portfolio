@@ -22,8 +22,7 @@ export const profile = {
   siteDescription:
     "Harris Angkua (Karris) is a full-stack developer from the Philippines building web, mobile and AI-powered systems, from documentation and database design to deployment.",
   // EDIT: main tagline (typed first in the hero, reused in the footer)
-  tagline:
-    "Full-stack developer building web, mobile and AI-powered systems",
+  tagline: "Full-stack developer building web, mobile and AI-powered systems",
   // EDIT: one or two sentences under the headline
   valueStatement:
     "I design and build complete systems: full-stack web apps, Flutter mobile apps and machine learning projects, from requirements and database schema all the way to deployment.",
@@ -93,17 +92,20 @@ export const about = {
     {
       icon: "Code2",
       title: "Full-stack: web, mobile and AI",
-      description: "From React and Laravel to Flutter apps and machine learning models, end to end.",
+      description:
+        "From React and Laravel to Flutter apps and machine learning models, end to end.",
     },
     {
       icon: "Sparkles",
       title: "AI-assisted, quality-first engineering",
-      description: "I use LLMs to move faster, then review, test and refine everything I ship.",
+      description:
+        "I use LLMs to move faster, then review, test and refine everything I ship.",
     },
     {
       icon: "Rocket",
       title: "Always learning, open to opportunities",
-      description: "Looking for internships, junior roles and collaborations where I can grow and contribute.",
+      description:
+        "Looking for internships, junior roles and collaborations where I can grow and contribute.",
     },
   ],
   // Shown as chips under the highlights. Set to [] to hide.
@@ -254,6 +256,7 @@ export const skills = {
         "RESTful API design",
         "MySQL",
         "PostgreSQL",
+        "Supabase",
         "SQLite",
       ],
     },
@@ -264,8 +267,6 @@ export const skills = {
       items: [
         "Python (ML, automation, data)",
         "Face recognition & biometrics",
-        "Speech recognition (STT/TTS)",
-        "Geofencing & location tracking",
         "Cron jobs & task automation",
         "Git, GitHub, npm, PowerShell",
         "Vercel, Cloudflared, GitHub Actions",
@@ -278,8 +279,7 @@ export const skills = {
 /* ------------------------------ PROJECTS -------------------------------- */
 export const projectsSection = {
   title: "Selected projects",
-  subtitle:
-    "Systems I have built, from thesis research to real-world tools.",
+  subtitle: "Systems I have built, from thesis research to real-world tools.",
 };
 
 // Filter buttons. `value` must match a project category (or "All").
