@@ -47,20 +47,22 @@ export default function Hero({ ready }: { ready: boolean }) {
               {profile.valueStatement}
             </motion.p>
 
-            <motion.div variants={item} className="mt-9 flex flex-wrap gap-4">
-              <MagneticButton href={hero.primaryCta.href}>
+            <motion.div variants={item} className="mt-9 flex flex-nowrap gap-3 sm:gap-4">
+              <MagneticButton href={hero.primaryCta.href} className="flex-1 !px-4 text-sm sm:flex-none sm:!px-7 sm:text-base">
                 {hero.primaryCta.label} <ArrowRight className="h-4 w-4" aria-hidden="true" />
               </MagneticButton>
-              <MagneticButton href={hero.secondaryCta.href} variant="ghost">
+              <MagneticButton href={hero.secondaryCta.href} variant="ghost" className="flex-1 !px-4 text-sm sm:flex-none sm:!px-7 sm:text-base">
                 <Mail className="h-4 w-4" aria-hidden="true" /> {hero.secondaryCta.label}
               </MagneticButton>
             </motion.div>
           </motion.div>
         </Parallax>
 
-        <Parallax speed={-0.05} start="top top">
-          <HeroGraphic ready={ready} />
-        </Parallax>
+        <div className="hidden lg:block">
+          <Parallax speed={-0.05} start="top top">
+            <HeroGraphic ready={ready} />
+          </Parallax>
+        </div>
       </div>
 
       <a
