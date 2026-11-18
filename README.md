@@ -44,7 +44,7 @@ Visitors get a "Reduce motion" switch; the OS setting is honored too.
 **Contact form** — create a free form at https://formspree.io, copy its URL, paste into
 `contact.formspreeEndpoint` in `content.ts`. Until then the form opens the visitor's email app.
 
-**SEO / share image** — edit `<title>` and meta tags in `index.html`; replace `https://your-domain.com` with your real domain.
+**SEO / share image** — edit `<title>` and meta tags in `index.html`; set the `og:url`/`og:image` URLs to your real domain (currently `https://karrixmusix.vercel.app`).
 
 ## Deploy (free)
 
