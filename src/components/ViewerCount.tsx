@@ -58,12 +58,8 @@ export default function ViewerCount() {
           initial={reduced ? false : { opacity: 0, y: 24, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ type: 'spring', stiffness: 160, damping: 18, delay: 1.2 }}
-          className="glass gradient-border fixed bottom-3 right-3 z-40 flex items-center gap-2.5 rounded-xl px-3 py-2 shadow-glow-sm sm:bottom-5 sm:right-5"
+          className="glass gradient-border fixed bottom-3 right-3 z-40 flex items-center rounded-xl px-3 py-2 shadow-glow-sm sm:bottom-5 sm:right-5"
         >
-          <span className="relative flex h-2 w-2 shrink-0">
-            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-70" />
-            <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
-          </span>
           <span className="leading-none">
             <span className="block font-display text-base font-black text-gradient">
               <Counter value={views} duration={1.6} />
