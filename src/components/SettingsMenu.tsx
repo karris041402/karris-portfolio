@@ -104,10 +104,7 @@ export default function SettingsMenu() {
             </div>
             <div className="mt-3 flex items-center justify-between">
               <span id="lite-label" className="text-sm text-white">
-                Lite mode{" "}
-                <span className="text-xs text-white/50">
-                  (reduced animations)
-                </span>
+                Lite Graphics{" "}
               </span>
               <button
                 type="button"
