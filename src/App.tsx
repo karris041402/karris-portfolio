@@ -6,6 +6,7 @@ import { ScrollTrigger } from './lib/gsap';
 import AuroraBackground from './components/AuroraBackground';
 import Cursor from './components/Cursor';
 import Footer from './components/Footer';
+import ViewerCount from './components/ViewerCount';
 import GridBackground from './components/GridBackground';
 import Loader from './components/Loader';
 import Navbar from './components/Navbar';
@@ -68,6 +69,7 @@ function Shell() {
       </main>
 
       <Footer items={nav} />
+      <ViewerCount />
     </>
   );
 }
