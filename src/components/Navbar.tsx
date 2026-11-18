@@ -64,7 +64,7 @@ export default function Navbar({ items }: { items: NavItem[] }) {
             <a
               href={resume.file}
               download={resume.filename}
-              className="inline-flex items-center gap-2 rounded-full border border-primary/50 bg-primary/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary/20 hover:shadow-glow-sm"
+              className="inline-flex items-center gap-2 rounded-full bg-neon-gradient px-4 py-2 text-sm font-bold text-ink-950 shadow-glow-sm transition duration-300 hover:-translate-y-0.5 hover:shadow-glow focus-visible:outline-offset-4"
             >
               <Download className="h-4 w-4" aria-hidden="true" /> {resume.label}
             </a>
@@ -121,7 +121,7 @@ export default function Navbar({ items }: { items: NavItem[] }) {
                 href={resume.file}
                 download={resume.filename}
                 onClick={() => setOpen(false)}
-                className="inline-flex items-center gap-2 rounded-full border border-primary/50 bg-primary/10 px-5 py-2.5 font-semibold text-white"
+                className="inline-flex items-center gap-2 rounded-full bg-neon-gradient px-5 py-2.5 font-bold text-ink-950 shadow-glow-sm"
               >
                 <Download className="h-4 w-4" aria-hidden="true" /> {resume.label}
               </a>
