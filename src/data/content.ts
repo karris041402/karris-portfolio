@@ -5,6 +5,7 @@ import profilePhoto from "../assets/profile/profile.png";
    Search for "EDIT:" to find every spot that needs your real details.
    ========================================================================== */
 
+import resumePdf from "../assets/docs/Resume-Angkua.pdf";
 import type { Accent, NavItem, Project, ProjectFilter, Social } from "../types";
 
 /* ------------------------------ PROFILE --------------------------------- */
@@ -50,6 +51,14 @@ export const nav: NavItem[] = [
   { id: "process", label: "How I Build" },
   { id: "contact", label: "Contact" },
 ];
+
+// Resume download link in the navbar. file = PDF in src/assets/docs (case-sensitive name),
+// filename = the name it gets on the visitor's device.
+export const resume = {
+  label: "Download Resume",
+  file: resumePdf,
+  filename: "resume-angkua.pdf",
+};
 
 /* ------------------------------ HERO ------------------------------------ */
 export const hero = {

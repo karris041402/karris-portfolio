@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Menu, X } from 'lucide-react';
+import { Download, Menu, X } from 'lucide-react';
+import { resume } from '../data/content';
 import { useActiveSection } from '../hooks/useActiveSection';
 import type { NavItem } from '../types';
 import Logo from './Logo';
@@ -59,6 +60,15 @@ export default function Navbar({ items }: { items: NavItem[] }) {
               </a>
             </li>
           ))}
+          <li className="ml-2">
+            <a
+              href={resume.file}
+              download={resume.filename}
+              className="inline-flex items-center gap-2 rounded-full border border-primary/50 bg-primary/10 px-4 py-2 text-sm font-semibold text-white transition hover:bg-primary/20 hover:shadow-glow-sm"
+            >
+              <Download className="h-4 w-4" aria-hidden="true" /> {resume.label}
+            </a>
+          </li>
         </ul>
 
         <div className="flex items-center gap-2">
@@ -106,6 +116,16 @@ export default function Navbar({ items }: { items: NavItem[] }) {
                 </a>
               </motion.li>
             ))}
+            <li className="pt-4">
+              <a
+                href={resume.file}
+                download={resume.filename}
+                onClick={() => setOpen(false)}
+                className="inline-flex items-center gap-2 rounded-full border border-primary/50 bg-primary/10 px-5 py-2.5 font-semibold text-white"
+              >
+                <Download className="h-4 w-4" aria-hidden="true" /> {resume.label}
+              </a>
+            </li>
           </motion.ul>
         )}
       </AnimatePresence>
