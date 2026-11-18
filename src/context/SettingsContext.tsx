@@ -36,12 +36,6 @@ const write = (key: string, value: unknown): void => {
   }
 };
 
-// Weak hardware: few CPU cores or little RAM.
-const weakDevice = (): boolean => {
-  const nav = navigator as Navigator & { deviceMemory?: number };
-  return (navigator.hardwareConcurrency || 8) <= 4 || (nav.deviceMemory ?? 8) <= 4;
-};
-
 export function SettingsProvider({ children }: { children: ReactNode }) {
   const [accentId, setAccentId] = useState<string>(() => read('accent', defaultAccent));
   // null = follow the OS setting, true/false = visitor's explicit choice
@@ -50,37 +44,8 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
     () => window.matchMedia('(prefers-reduced-motion: reduce)').matches,
   );
 
-  // null = automatic, true/false = visitor's explicit choice
+  // Lite graphics are ON for first-time visitors; null = never chosen, true/false = visitor's explicit choice
   const [userLite, setUserLite] = useState<boolean | null>(() => read<boolean | null>('lite', null));
-  const [autoLite, setAutoLite] = useState(weakDevice);
-
-  // Frame-rate probe: if the page runs under ~40fps for a few seconds, switch to lite automatically.
-  useEffect(() => {
-    if (userLite !== null || autoLite) return undefined;
-    let raf = 0;
-    let last = 0;
-    let slow = 0;
-    let frames = 0;
-    const start = performance.now() + 5000; // skip the loader / first paint
-    const tick = (t: number) => {
-      if (document.visibilityState === 'visible' && t > start) {
-        if (last) {
-          frames++;
-          if (t - last > 28) slow++; // frame slower than ~35fps
-        }
-        last = t;
-        if (frames >= 120) {
-          if (slow / frames > 0.4) setAutoLite(true);
-          return;
-        }
-      } else {
-        last = 0;
-      }
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(raf);
-  }, [userLite, autoLite]);
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -91,7 +56,7 @@ export function SettingsProvider({ children }: { children: ReactNode }) {
 
   const theme = useMemo(() => accents.find((a) => a.id === accentId) || accents[0], [accentId]);
   const reduced = userReduce ?? osReduce;
-  const lite = userLite ?? autoLite;
+  const lite = userLite ?? true;
 
   useEffect(() => {
     const root = document.documentElement;
