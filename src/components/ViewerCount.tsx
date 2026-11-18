@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import { AnimatePresence, motion } from 'framer-motion';
-import { Eye } from 'lucide-react';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 import Counter from './Counter';
 
@@ -59,22 +58,17 @@ export default function ViewerCount() {
           initial={reduced ? false : { opacity: 0, y: 24, scale: 0.9 }}
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ type: 'spring', stiffness: 160, damping: 18, delay: 1.2 }}
-          className="glass gradient-border fixed bottom-4 right-4 z-40 flex items-center gap-3 rounded-2xl px-4 py-3 shadow-glow-sm sm:bottom-6 sm:right-6"
+          className="glass gradient-border fixed bottom-3 right-3 z-40 flex items-center gap-2.5 rounded-xl px-3 py-2 shadow-glow-sm sm:bottom-5 sm:right-5"
         >
-          <span className="relative grid h-9 w-9 place-items-center rounded-xl bg-primary/10 text-primary">
-            <Eye className="h-4 w-4" aria-hidden="true" />
-            <span className="absolute -right-0.5 -top-0.5 flex h-2.5 w-2.5">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-70" />
-              <span className="relative inline-flex h-2.5 w-2.5 rounded-full bg-primary" />
-            </span>
+          <span className="relative flex h-2 w-2 shrink-0">
+            <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-70" />
+            <span className="relative inline-flex h-2 w-2 rounded-full bg-primary" />
           </span>
-          <span className="leading-tight">
-            <span className="block font-display text-xl font-black text-gradient">
+          <span className="leading-none">
+            <span className="block font-display text-base font-black text-gradient">
               <Counter value={views} duration={1.6} />
             </span>
-            <span className="block font-mono text-[10px] uppercase tracking-widest text-slate-400">
-              {views === 1 ? 'Visitor' : 'Visitors'}
-            </span>
+            <span className="mt-1 block font-mono text-[9px] uppercase tracking-widest text-slate-400">Total visitors</span>
           </span>
         </motion.aside>
       )}
