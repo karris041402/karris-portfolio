@@ -5,6 +5,7 @@ import { getIcon } from '../lib/icons';
 import { useReducedMotion } from '../hooks/useReducedMotion';
 import Logo from './Logo';
 import MagneticButton from './MagneticButton';
+import ViewerCount from './ViewerCount';
 
 /* Footer: static logo, tagline, quick links, socials, back-to-top, copyright. */
 export default function Footer({ items }: { items: NavItem[] }) {
@@ -60,6 +61,7 @@ export default function Footer({ items }: { items: NavItem[] }) {
           <p>
             © {new Date().getFullYear()} {profile.brand}. All rights reserved.
           </p>
+          <ViewerCount />
           <p>{footer.note}</p>
         </div>
       </div>
