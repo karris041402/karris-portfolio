@@ -30,7 +30,11 @@ export default function Navbar({ items }: { items: NavItem[] }) {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled || open ? 'border-b border-white/10 bg-ink-950/70 backdrop-blur-xl' : 'bg-transparent'
+        open
+          ? 'border-b border-white/10 bg-ink-950/95 backdrop-blur-xl'
+          : scrolled
+            ? 'border-b border-white/10 bg-ink-950/70 backdrop-blur-xl'
+            : 'bg-transparent'
       }`}
     >
       <nav aria-label="Main" className="container-x flex h-16 items-center justify-between md:h-20">
