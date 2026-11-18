@@ -225,7 +225,6 @@ export const services = {
 };
 
 /* ------------------------------ SKILLS ---------------------------------- */
-// level = 0-100
 export const skills = {
   title: "My tech stack",
   subtitle: "The tools I use to design, build and ship systems.",
@@ -235,15 +234,14 @@ export const skills = {
       id: "frontend",
       icon: "Code2",
       title: "Frontend & Design",
-      // EDIT: levels are rough estimates, adjust to your real confidence
       items: [
-        { name: "React + Tailwind CSS", level: 90 },
-        { name: "HTML5, CSS3, TypeScript", level: 85 },
-        { name: "Flutter & Dart (mobile)", level: 75 },
-        { name: "Responsive & adaptive UI/UX", level: 88 },
-        { name: "Figma", level: 82 },
-        { name: "Canva", level: 85 },
-        { name: "Vite / Electron", level: 72 },
+        "React + Tailwind CSS",
+        "HTML5, CSS3, TypeScript",
+        "Flutter & Dart (mobile)",
+        "Responsive & adaptive UI/UX",
+        "Figma",
+        "Canva",
+        "Vite / Electron",
       ],
     },
     {
@@ -251,12 +249,12 @@ export const skills = {
       icon: "Server",
       title: "Backend & Databases",
       items: [
-        { name: "Laravel (PHP)", level: 82 },
-        { name: "Node.js", level: 82 },
-        { name: "RESTful API design", level: 88 },
-        { name: "MySQL", level: 85 },
-        { name: "PostgreSQL", level: 75 },
-        { name: "SQLite", level: 78 },
+        "Laravel (PHP)",
+        "Node.js",
+        "RESTful API design",
+        "MySQL",
+        "PostgreSQL",
+        "SQLite",
       ],
     },
     {
@@ -264,14 +262,14 @@ export const skills = {
       icon: "Brain",
       title: "AI & Tools",
       items: [
-        { name: "Python (ML, automation, data)", level: 85 },
-        { name: "Face recognition & biometrics", level: 78 },
-        { name: "Speech recognition (STT/TTS)", level: 75 },
-        { name: "Geofencing & location tracking", level: 78 },
-        { name: "Cron jobs & task automation", level: 82 },
-        { name: "Git, GitHub, npm, PowerShell", level: 88 },
-        { name: "Vercel, Cloudflared, GitHub Actions", level: 80 },
-        { name: "Networking (basic)", level: 55 },
+        "Python (ML, automation, data)",
+        "Face recognition & biometrics",
+        "Speech recognition (STT/TTS)",
+        "Geofencing & location tracking",
+        "Cron jobs & task automation",
+        "Git, GitHub, npm, PowerShell",
+        "Vercel, Cloudflared, GitHub Actions",
+        "Networking (basic)",
       ],
     },
   ],

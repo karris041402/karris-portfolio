@@ -3,7 +3,6 @@ import { getIcon } from '../lib/icons';
 import CodeRain from '../components/CodeRain';
 import Reveal from '../components/Reveal';
 import SectionHeading from '../components/SectionHeading';
-import SkillBar from '../components/SkillBar';
 
 export default function Skills() {
   return (
@@ -23,11 +22,16 @@ export default function Skills() {
                     </span>
                     {group.title}
                   </h3>
-                  <div className="space-y-5">
-                    {group.items.map((s, i) => (
-                      <SkillBar key={s.name} name={s.name} level={s.level} delay={i * 0.08} />
+                  <ul className="flex flex-wrap gap-2">
+                    {group.items.map((name) => (
+                      <li
+                        key={name}
+                        className="rounded-full border border-white/10 bg-white/5 px-3 py-1.5 text-sm text-slate-200 transition-colors hover:border-primary/50 hover:bg-primary/10 hover:text-white"
+                      >
+                        {name}
+                      </li>
                     ))}
-                  </div>
+                  </ul>
                 </div>
               </Reveal>
             );
